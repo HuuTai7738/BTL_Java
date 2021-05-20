@@ -17,8 +17,52 @@ public class SinhVien {
     private String khoaQL;
     private String lop;
     private ThongTinSV thongTinSV;
-    private TaiKhoan taiKhoan;
     private ThongTinGD thongTinGD;
-    private ArrayList<HoatDong> listHoatDong=new ArrayList<>();
-    private ArrayList<KyLuat> listKyLuat=new ArrayList<>();
+    private ArrayList<HoatDong> listHoatDong;
+    private ArrayList<KyLuat> listKyLuat;
+
+    public SinhVien(String maSV, String tenSV, String khoaQL, String lop, ThongTinSV thongTinSV, ThongTinGD thongTinGD, ArrayList<HoatDong> listHoatDong, ArrayList<KyLuat> listKyLuat) {
+        this.maSV = maSV;
+        this.tenSV = tenSV;
+        this.khoaQL = khoaQL;
+        this.lop = lop;
+        this.thongTinSV = thongTinSV;
+        this.thongTinGD = thongTinGD;
+        this.listHoatDong = listHoatDong;
+        this.listKyLuat = listKyLuat;
+    }
+
+    public String getMaSV() {
+        return maSV;
+    }
+
+    public String getTenSV() {
+        return tenSV;
+    }
+
+    public String getKhoaQL() {
+        return khoaQL;
+    }
+
+    public String getLop() {
+        return lop;
+    }
+
+    public ThongTinSV getThongTinSV() {
+        return thongTinSV;
+    }
+
+    public ThongTinGD getThongTinGD() {
+        return thongTinGD;
+    }
+
+    public ArrayList<HoatDong> getListHoatDong() {
+        return listHoatDong;
+    }
+
+    public ArrayList<KyLuat> getListKyLuat() {
+        return listKyLuat;
+    }
+
+    
 }
