@@ -34,14 +34,14 @@ public class SVCustomTable extends AbstractTableModel{
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        return switch (columnIndex) {
-            case 0 -> rowIndex;
-            case 1 -> list.get(rowIndex).getMaSV();
-            case 2 -> list.get(rowIndex).getTenSV();
-            case 3 -> list.get(rowIndex).getKhoaQL();
-            case 4 -> list.get(rowIndex).getLop();
-            default -> null;
-        };
+         switch (columnIndex) {
+            case 0: return rowIndex;
+            case 1 : return list.get(rowIndex).getMaSV();
+            case 2 : return list.get(rowIndex).getTenSV();
+            case 3 : return list.get(rowIndex).getKhoaQL();
+            case 4 : return list.get(rowIndex).getLop();
+            default : return null;
+        }
     }
 
     @Override
