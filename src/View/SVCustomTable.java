@@ -24,18 +24,19 @@ public class SVCustomTable extends AbstractTableModel{
     
     @Override
     public int getRowCount() {
-        return name.length;
+        return list.size();
+        
     }
 
     @Override
     public int getColumnCount() {
-        return list.size();
+        return name.length;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
          switch (columnIndex) {
-            case 0: return rowIndex;
+            case 0: return rowIndex+1;
             case 1 : return list.get(rowIndex).getMaSV();
             case 2 : return list.get(rowIndex).getTenSV();
             case 3 : return list.get(rowIndex).getKhoaQL();

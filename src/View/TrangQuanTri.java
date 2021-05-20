@@ -6,9 +6,15 @@
 package View;
 
 
+import Controllers.DBConnection;
 import Model.SinhVien;
+import Model.ThongTinGD;
+import Model.ThongTinSV;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,29 +25,69 @@ public class TrangQuanTri extends javax.swing.JFrame {
     /**
      * Creates new form TrangQuanTri
      */
-    DefaultTableModel tblModel;
-    ArrayList<SinhVien> list;
-    int i=1;
+    ArrayList<SinhVien> list = new ArrayList<>();
+    DBConnection dbconnection = new DBConnection();
+    Connection cnt;
     public TrangQuanTri() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setTitle("Hệ thống quản lý sinh viên");
-        tblModel=(DefaultTableModel) tblSinhVien.getModel();
-        tblModel.setColumnIdentifiers(new Object[]{
-            "STT","Mã sinh viên","Tên sinh viên","Khoa quản lý","Lớp"
-        });
-        hienThi();
+        cnt = dbconnection.getConnection();
+        loadCSDL();
+        loadTable();
         //dung customtable thi tblSinhVien.setModel(new SVCustomTable(list));
     }
 
-    public void hienThi(){
-        tblModel.setRowCount(0);
-        for(SinhVien x:list){
-            tblModel.addRow(new Object[]{
-                i++,x.getMaSV(),x.getTenSV(),x.getKhoaQL(),x.getLop()
-            });
+    public void loadTable(){
+        tblSinhVien.setModel(new SVCustomTable(list));
+    }
+    public void loadCSDL(){
+        ResultSet rs = dbconnection.layThongTinSinhVien();
+        try {
+            while(rs.next()){
+                SinhVien x = new SinhVien();
+                x.setMaSV(rs.getString("MASV"));
+                x.setTenSV(rs.getString("TENSV"));
+                x.setKhoaQL(rs.getString("KHOA"));
+                x.setLop(rs.getString("LOP"));
+                
+                ThongTinSV ttsv = new ThongTinSV();
+                ttsv.setNgaySinh(rs.getDate("NGAYSINH").toString());
+                ttsv.setSdtSV(rs.getString("SDTSV"));
+                ttsv.setEmailSV("EMAILSV");
+                ttsv.setQuocTich(rs.getString("NOITHUONGTRU"));
+                ttsv.setNoiTamTru(rs.getString("NOITAMTRU"));
+                ttsv.setDanToc(rs.getString("DANTOC"));
+                ttsv.setDanToc(rs.getString("DANTOC"));
+                ttsv.setTonGiao(rs.getString("TONGIAO"));
+                ttsv.setSoCCCD("SOCCCD");
+                ttsv.setTenNganHang("TENNGANHANG");
+                ttsv.setStkNganHang("STKNGANHANG");
+                ttsv.setMaBHYT("MABHYT");
+                x.setThongTinSV(ttsv);
+                
+                ThongTinGD ttgd = new ThongTinGD();
+                ttgd.setHoTenCha(rs.getString("HOTENCHA"));
+                ttgd.setNamSinhCha(rs.getInt("NAMSINHCHA"));
+                ttgd.setDienThoaiCha(rs.getString("DIENTHOAICHA"));
+                ttgd.setNgheNghiepCha(rs.getString("NGHENGHIEPCHA"));
+                ttgd.setDiaChiLienHeCha(rs.getString("DIACHILIENHECHA"));
+                ttgd.setHoTenMe(rs.getString("HOTENME"));
+                ttgd.setNamSinhMe(rs.getInt("NAMSINHME"));
+                ttgd.setDienThoaiMe(rs.getString("DIENTHOAIME"));
+                ttgd.setNgheNghiepCha(rs.getString("NGHENGHIEPME"));
+                ttgd.setDiaChiLienHeMe(rs.getString("DIACHILIENHEME"));
+                ttgd.setHoTenChuHo(rs.getString("HOTENCHUHO"));
+                x.setThongTinGD(ttgd);
+                
+                list.add(x);
+            }
+            } 
+        catch (SQLException ex) {
+            Logger.getLogger(TrangQuanTri.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,7 +101,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtMaSV = new javax.swing.JTextField();
         btnTimKiem = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
         tblSinhVien = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -78,13 +124,16 @@ public class TrangQuanTri extends javax.swing.JFrame {
 
         tblSinhVien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tblSinhVien);
+        jScrollPane2.setViewportView(tblSinhVien);
 
         jMenu1.setText("Nhập mới sinh viên");
         jMenuBar1.add(jMenu1);
@@ -119,22 +168,22 @@ public class TrangQuanTri extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(53, 53, 53)
-                .addComponent(txtMaSV, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtMaSV, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnTimKiem)
                 .addGap(44, 44, 44))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(240, 240, 240))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(159, 159, 159)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(354, 354, 354)
+                        .addComponent(jLabel1)))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,9 +195,9 @@ public class TrangQuanTri extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtMaSV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTimKiem))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(136, 136, 136))
         );
 
         pack();
@@ -202,7 +251,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblSinhVien;
     private javax.swing.JTextField txtMaSV;
     // End of variables declaration//GEN-END:variables
