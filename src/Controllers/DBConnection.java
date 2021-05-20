@@ -42,7 +42,7 @@ public class DBConnection {
         try {
             
             Statement st =  cont.createStatement();
-            String s = "SELECT * FROM SINHVIEN JOIN THONGTINGIADINH ON SINHVIEN.MASV = THONGTINGIADIDNH.MASV JOIN THONGTINSINHVIEN ON THONGTINSINHVIEN.MASV = SINHVIEN.MASV ";
+            String s = "SELECT * FROM SINHVIEN JOIN THONGTINGIADINH ON SINHVIEN.MASV = THONGTINGIADINH.MASV JOIN THONGTINSINHVIEN ON SINHVIEN.MASV = THONGTINSINHVIEN.MASV";
             rs = st.executeQuery(s);
             
         } catch (SQLException ex) {
@@ -50,5 +50,24 @@ public class DBConnection {
         }
         return rs;
     }
+    public ResultSet layBangTaiKhoan(){
+        getConnection();
+        ResultSet rs = null;
+        try {
+            Statement st = cont.createStatement();
+            rs = st.executeQuery("SELECT * FROM TAIKHOAN");
+        } catch (SQLException ex) {
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        closeConnection();
+        return rs;
+    }
     
+    public ResultSet layHoatDongSinhVien(String s){
+        ResultSet rs = null;
+        
+        
+        
+        return rs;
+    }
 }
