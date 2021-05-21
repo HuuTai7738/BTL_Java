@@ -2,6 +2,37 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
+    <Container class="javax.swing.JPopupMenu" name="jPopUpTblSV">
+      <Properties>
+        <Property name="componentPopupMenu" type="javax.swing.JPopupMenu" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="jPopUpTblSV"/>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+      <SubComponents>
+        <MenuItem class="javax.swing.JMenuItem" name="jMenuChiTiet">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Chi ti&#x1ebf;t"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuChiTietActionPerformed"/>
+          </Events>
+        </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="jMenuXoa">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
+          </Properties>
+        </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="jMenuSua">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="S&#x1eed;a th&#xf4;ng tin"/>
+          </Properties>
+        </MenuItem>
+      </SubComponents>
+    </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
@@ -153,6 +184,9 @@
                 <Column editable="true" title="Title 3" type="java.lang.Object"/>
                 <Column editable="true" title="Title 4" type="java.lang.Object"/>
               </Table>
+            </Property>
+            <Property name="componentPopupMenu" type="javax.swing.JPopupMenu" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="jPopUpTblSV"/>
             </Property>
           </Properties>
         </Component>

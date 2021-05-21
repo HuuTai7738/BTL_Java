@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txt_maSV" min="-2" pref="89" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabel11" max="32767" attributes="0"/>
+                                          <Component id="jLabel17" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txt_ngaySinh" min="-2" pref="83" max="-2" attributes="0"/>
+                                          <Component id="txt_quocTich" min="-2" pref="63" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel5" max="32767" attributes="0"/>
+                                  <Component id="jLabel13" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txt_noiThuongTru" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txt_tenNganHang" min="-2" pref="154" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabel27" min="-2" pref="81" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txt_tenSV" min="-2" pref="130" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="txt_sdt" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="txt_khoa" min="-2" pref="135" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txt_lop" min="-2" pref="99" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel15" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txt_email" min="-2" pref="150" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txt_noiTamTru" min="-2" pref="129" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txt_soCCCD" min="-2" pref="115" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="txt_soTaiKhoan" min="-2" pref="108" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel29" min="-2" pref="56" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txt_maBHYT" min="-2" pref="142" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jButton_quayLai" min="-2" pref="94" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel38" max="32767" attributes="0"/>
+                          <Component id="jLabel42" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabel48" max="32767" attributes="0"/>
+                          <Component id="jLabel52" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txt_tenCha" alignment="0" pref="135" max="32767" attributes="0"/>
+                          <Component id="txt_ngheCha" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="txt_tenMe" max="32767" attributes="0"/>
+                          <Component id="txt_ngheNghiepMe" max="32767" attributes="0"/>
+                          <Component id="txt_tenChuHo" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txt_namSinhCha" min="-2" pref="65" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                              <Component id="jLabel36" min="-2" pref="54" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txt_sdtCha" min="-2" pref="139" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txt_diaChiCha" min="-2" pref="228" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jLabel50" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel44" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="txt_namSinhMe" min="-2" pref="69" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                                      <Component id="jLabel46" min="-2" pref="55" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txt_sdtMe" min="-2" pref="69" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="txt_diaChiMe" min="-2" pref="247" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_maSV" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_tenSV" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_khoa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_lop" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_ngaySinh" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_sdt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_email" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_quocTich" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_noiThuongTru" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_noiTamTru" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_soCCCD" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_tenNganHang" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_soTaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_maBHYT" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_tenCha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_namSinhCha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_sdtCha" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_ngheCha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_diaChiCha" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_tenMe" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_namSinhMe" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_sdtMe" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_ngheNghiepMe" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_diaChiMe" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_tenChuHo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <Component id="jButton_quayLai" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Chi Ti&#x1ebf;t Th&#xf4;ng Tin Sinh Vi&#xea;n"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Th&#xf4;ng tin sinh vi&#xea;n"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="M&#xe3; Sinh Vi&#xea;n: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_maSV">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel4"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="T&#xea;n Sinh Vi&#xea;n:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_tenSV">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel6"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Khoa:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_khoa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="L&#x1edb;p:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_lop">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel10"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ng&#xe0;y Sinh: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_ngaySinh">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel12"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel13">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_sdt">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel14"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel15">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Email:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_email">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel16"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel17">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Qu&#x1ed1;c t&#x1ecb;ch:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_quocTich">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel18"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel19">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="N&#x1a1;i th&#x1b0;&#x1edd;ng tr&#xfa;:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_noiThuongTru">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel20"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel21">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="N&#x1a1;i t&#x1ea1;m tr&#xfa;: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_noiTamTru">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel22"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel23">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="S&#x1ed1; CCCD:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_soCCCD">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel24"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel25">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="T&#xea;n ng&#xe2;n h&#xe0;ng: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_tenNganHang">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel26"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel27">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="S&#x1ed1; t&#xe0;i kho&#x1ea3;n: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_soTaiKhoan">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel28"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel29">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="M&#xe3; BHYT"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_maBHYT">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel30"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel31">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Th&#xf4;ng tin gia &#x111;&#xec;nh"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel32">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="H&#x1ecd; t&#xea;n cha: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_tenCha">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel33"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel34">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="N&#x103;m sinh cha:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_namSinhCha">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel35"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel36">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="SDT cha:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_sdtCha">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel37"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel38">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ngh&#x1ec1; nghi&#x1ec7;p cha:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_ngheCha">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel39"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel40">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9; cha: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_diaChiCha">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel41"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel42">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="H&#x1ecd; t&#xea;n m&#x1eb9;:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_tenMe">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel43"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel44">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="N&#x103;m sinh m&#x1eb9;: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_namSinhMe">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel45"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel46">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="SDT m&#x1eb9;: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_sdtMe">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel47"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel48">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ngh&#x1ec1; nghi&#x1ec7;p m&#x1eb9;: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_ngheNghiepMe">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel49"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel50">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9; m&#x1eb9;: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_diaChiMe">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel51"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel52">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="T&#xea;n ch&#x1ee7; h&#x1ed9;:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txt_tenChuHo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel53"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton_quayLai">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quay L&#x1ea1;i"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_quayLaiActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

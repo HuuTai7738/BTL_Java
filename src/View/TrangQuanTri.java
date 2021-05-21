@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -54,16 +55,17 @@ public class TrangQuanTri extends javax.swing.JFrame {
                 ThongTinSV ttsv = new ThongTinSV();
                 ttsv.setNgaySinh(rs.getDate("NGAYSINH").toString());
                 ttsv.setSdtSV(rs.getString("SDTSV"));
-                ttsv.setEmailSV("EMAILSV");
-                ttsv.setQuocTich(rs.getString("NOITHUONGTRU"));
+                ttsv.setEmailSV(rs.getString("EMAILSV"));
+                ttsv.setQuocTich(rs.getString("QUOCTICH"));
+                ttsv.setNoiThuongTru(rs.getString("NOITHUONGTRU"));
                 ttsv.setNoiTamTru(rs.getString("NOITAMTRU"));
                 ttsv.setDanToc(rs.getString("DANTOC"));
                 ttsv.setDanToc(rs.getString("DANTOC"));
                 ttsv.setTonGiao(rs.getString("TONGIAO"));
-                ttsv.setSoCCCD("SOCCCD");
-                ttsv.setTenNganHang("TENNGANHANG");
-                ttsv.setStkNganHang("STKNGANHANG");
-                ttsv.setMaBHYT("MABHYT");
+                ttsv.setSoCCCD(rs.getString("SOCCCD"));
+                ttsv.setTenNganHang(rs.getString("TENNGANHANG"));
+                ttsv.setStkNganHang(rs.getString("STKNGANHANG"));
+                ttsv.setMaBHYT(rs.getString("MABHYT"));
                 x.setThongTinSV(ttsv);
                 
                 ThongTinGD ttgd = new ThongTinGD();
@@ -75,7 +77,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
                 ttgd.setHoTenMe(rs.getString("HOTENME"));
                 ttgd.setNamSinhMe(rs.getInt("NAMSINHME"));
                 ttgd.setDienThoaiMe(rs.getString("DIENTHOAIME"));
-                ttgd.setNgheNghiepCha(rs.getString("NGHENGHIEPME"));
+                ttgd.setNgheNghiepMe(rs.getString("NGHENGHIEPME"));
                 ttgd.setDiaChiLienHeMe(rs.getString("DIACHILIENHEME"));
                 ttgd.setHoTenChuHo(rs.getString("HOTENCHUHO"));
                 x.setThongTinGD(ttgd);
@@ -97,6 +99,10 @@ public class TrangQuanTri extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopUpTblSV = new javax.swing.JPopupMenu();
+        jMenuChiTiet = new javax.swing.JMenuItem();
+        jMenuXoa = new javax.swing.JMenuItem();
+        jMenuSua = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtMaSV = new javax.swing.JTextField();
@@ -112,6 +118,22 @@ public class TrangQuanTri extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+
+        jPopUpTblSV.setComponentPopupMenu(jPopUpTblSV);
+
+        jMenuChiTiet.setText("Chi tiết");
+        jMenuChiTiet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuChiTietActionPerformed(evt);
+            }
+        });
+        jPopUpTblSV.add(jMenuChiTiet);
+
+        jMenuXoa.setText("Xóa");
+        jPopUpTblSV.add(jMenuXoa);
+
+        jMenuSua.setText("Sửa thông tin");
+        jPopUpTblSV.add(jMenuSua);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,6 +155,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblSinhVien.setComponentPopupMenu(jPopUpTblSV);
         jScrollPane2.setViewportView(tblSinhVien);
 
         jMenu1.setText("Nhập mới sinh viên");
@@ -203,6 +226,16 @@ public class TrangQuanTri extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenuChiTietActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuChiTietActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblSinhVien.getSelectedRow();
+        if(selectedRow == -1){
+            JOptionPane.showMessageDialog(null, "Hãy chọn một sinh viên!");
+        }
+        else
+        new ChiTietSinhVien(list.get(selectedRow)).setVisible(true);
+    }//GEN-LAST:event_jMenuChiTietActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -247,10 +280,14 @@ public class TrangQuanTri extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuChiTiet;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuSua;
+    private javax.swing.JMenuItem jMenuXoa;
+    private javax.swing.JPopupMenu jPopUpTblSV;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblSinhVien;
     private javax.swing.JTextField txtMaSV;
