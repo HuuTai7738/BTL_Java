@@ -13,6 +13,7 @@ import Model.ThongTinSV;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -53,7 +54,9 @@ public class TrangQuanTri extends javax.swing.JFrame {
                 x.setLop(rs.getString("LOP"));
                 
                 ThongTinSV ttsv = new ThongTinSV();
-                ttsv.setNgaySinh(rs.getDate("NGAYSINH").toString());
+                SimpleDateFormat date  = new SimpleDateFormat("dd/MM/yyyy");
+                String dt = date.format(rs.getDate("NGAYSINH"));
+                ttsv.setNgaySinh(dt);
                 ttsv.setSdtSV(rs.getString("SDTSV"));
                 ttsv.setEmailSV(rs.getString("EMAILSV"));
                 ttsv.setQuocTich(rs.getString("QUOCTICH"));
