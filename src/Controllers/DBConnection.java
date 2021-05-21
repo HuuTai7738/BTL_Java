@@ -70,4 +70,41 @@ public class DBConnection {
         
         return rs;
     }
+    
+    public void xoaSinhVien(String maSV){
+        PreparedStatement ps;
+        String xoaTK = "DELETE FROM TAIKHOAN WHERE MASV = ?";
+        String xoaThongTinGD = "DELETE FROM THONGTINGIADINH WHERE MASV = ?";
+        String xoathongTinSV = "DELETE FROM THONGTINSINHVIEN WHERE MASV = ?";
+        String xoaHoatDong = "DELETE FROM HOATDONG WHERE MASV = ?";
+        String xoaKiLuat = "DELETE FROM KILUAT WHERE MASV = ?";
+        String xoaSinhVien = "DELETE FROM SINHVIEN WHERE MASV = ?";
+        try {
+            ps = cont.prepareStatement(xoaTK);
+            ps.setString(1, maSV);
+            ps.executeUpdate();
+            
+            ps = cont.prepareStatement(xoaThongTinGD);
+            ps.setString(1, maSV);
+            ps.executeUpdate();
+            
+            ps = cont.prepareStatement(xoathongTinSV);
+            ps.setString(1, maSV);
+            ps.executeUpdate();
+            
+            ps = cont.prepareStatement(xoaHoatDong);
+            ps.setString(1, maSV);
+            ps.executeUpdate();
+            
+            ps = cont.prepareStatement(xoaKiLuat);
+            ps.setString(1, maSV);
+            ps.executeUpdate();
+            
+            ps = cont.prepareStatement(xoaSinhVien);
+            ps.setString(1, maSV);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

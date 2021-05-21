@@ -133,6 +133,11 @@ public class TrangQuanTri extends javax.swing.JFrame {
         jPopUpTblSV.add(jMenuChiTiet);
 
         jMenuXoa.setText("Xóa");
+        jMenuXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuXoaActionPerformed(evt);
+            }
+        });
         jPopUpTblSV.add(jMenuXoa);
 
         jMenuSua.setText("Sửa thông tin");
@@ -238,6 +243,27 @@ public class TrangQuanTri extends javax.swing.JFrame {
         else
         new ChiTietSinhVien(list.get(selectedRow)).setVisible(true);
     }//GEN-LAST:event_jMenuChiTietActionPerformed
+
+    private void jMenuXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuXoaActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblSinhVien.getSelectedRow();
+        try{
+            if(selectedRow == -1){
+                throw new Exception("Hãy chọn một dòng!");
+            }
+            else{
+                int choice = JOptionPane.showConfirmDialog(null, "Bạn chắc chắn muốn xóa sinh viên này?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+                if(choice == JOptionPane.YES_OPTION){
+                    dbconnection.xoaSinhVien(list.get(selectedRow).getMaSV());
+                    list.remove(selectedRow);
+                    loadTable();
+                }
+            }
+        }
+        catch(Exception ex){
+            JOptionPane.showConfirmDialog(null, ex.getMessage());
+        }
+    }//GEN-LAST:event_jMenuXoaActionPerformed
 
     /**
      * @param args the command line arguments
