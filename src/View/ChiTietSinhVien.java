@@ -6,18 +6,19 @@
 package View;
 
 import Model.SinhVien;
+import javax.swing.JFrame;
 
 /**
  *
  * @author Personal
  */
-public class ChiTietSinhVien extends javax.swing.JFrame {
+public class ChiTietSinhVien extends javax.swing.JDialog {
 
     /**
-     * Creates new form ChiTietSinhVien
+     * Creates new form ChiTiet
      */
-    
-    public ChiTietSinhVien(SinhVien sv) {
+    public ChiTietSinhVien(java.awt.Frame parent, boolean modal,SinhVien sv) {
+        super(parent, modal);
         initComponents();
         txt_maSV.setText(sv.getMaSV());
         txt_tenSV.setText(sv.getTenSV());
@@ -45,11 +46,10 @@ public class ChiTietSinhVien extends javax.swing.JFrame {
         txt_ngheNghiepMe.setText(sv.getThongTinGD().getNgheNghiepMe());
         txt_diaChiMe.setText(sv.getThongTinGD().getDiaChiLienHeMe());
         txt_tenChuHo.setText(sv.getThongTinGD().getHoTenChuHo());
-        
-        
+
     }
 
-    private ChiTietSinhVien() {
+    private ChiTietSinhVien(JFrame jFrame, boolean b) {
     }
 
     /**
@@ -61,16 +61,39 @@ public class ChiTietSinhVien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel32 = new javax.swing.JLabel();
+        txt_tenCha = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        txt_namSinhCha = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        txt_sdtCha = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        txt_ngheCha = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        txt_diaChiCha = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        txt_tenMe = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        txt_namSinhMe = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        txt_sdtMe = new javax.swing.JLabel();
         txt_maSV = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txt_tenSV = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        txt_ngheNghiepMe = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        txt_diaChiMe = new javax.swing.JLabel();
         txt_khoa = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        txt_tenChuHo = new javax.swing.JLabel();
         txt_lop = new javax.swing.JLabel();
+        jButton_quayLai = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         txt_ngaySinh = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -92,40 +115,57 @@ public class ChiTietSinhVien extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         txt_maBHYT = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        txt_tenCha = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        txt_namSinhCha = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        txt_sdtCha = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        txt_ngheCha = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        txt_diaChiCha = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        txt_tenMe = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        txt_namSinhMe = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        txt_sdtMe = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        txt_ngheNghiepMe = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        txt_diaChiMe = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
-        txt_tenChuHo = new javax.swing.JLabel();
-        jButton_quayLai = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel32.setText("Họ tên cha: ");
+
+        txt_tenCha.setText("jLabel33");
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel34.setText("Năm sinh cha:");
+
+        txt_namSinhCha.setText("jLabel35");
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel36.setText("SDT cha:");
+
+        txt_sdtCha.setText("jLabel37");
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel38.setText("Nghề nghiệp cha:");
+
+        txt_ngheCha.setText("jLabel39");
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel40.setText("Địa chỉ cha: ");
+
+        txt_diaChiCha.setText("jLabel41");
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel42.setText("Họ tên mẹ:");
+
+        txt_tenMe.setText("jLabel43");
+
+        jLabel44.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel44.setText("Năm sinh mẹ: ");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Chi Tiết Thông Tin Sinh Viên");
 
+        txt_namSinhMe.setText("jLabel45");
+
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Thông tin sinh viên");
 
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel46.setText("SDT mẹ: ");
+
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Mã Sinh Viên: ");
+
+        txt_sdtMe.setText("jLabel47");
 
         txt_maSV.setText("jLabel4");
 
@@ -137,12 +177,34 @@ public class ChiTietSinhVien extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Khoa:");
 
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel48.setText("Nghề nghiệp mẹ: ");
+
+        txt_ngheNghiepMe.setText("jLabel49");
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel50.setText("Địa chỉ mẹ: ");
+
+        txt_diaChiMe.setText("jLabel51");
+
         txt_khoa.setText("jLabel8");
+
+        jLabel52.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel52.setText("Tên chủ hộ:");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Lớp:");
 
+        txt_tenChuHo.setText("jLabel53");
+
         txt_lop.setText("jLabel10");
+
+        jButton_quayLai.setText("Quay Lại");
+        jButton_quayLai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_quayLaiActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setText("Ngày Sinh: ");
@@ -197,68 +259,6 @@ public class ChiTietSinhVien extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel31.setText("Thông tin gia đình");
 
-        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel32.setText("Họ tên cha: ");
-
-        txt_tenCha.setText("jLabel33");
-
-        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel34.setText("Năm sinh cha:");
-
-        txt_namSinhCha.setText("jLabel35");
-
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel36.setText("SDT cha:");
-
-        txt_sdtCha.setText("jLabel37");
-
-        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel38.setText("Nghề nghiệp cha:");
-
-        txt_ngheCha.setText("jLabel39");
-
-        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel40.setText("Địa chỉ cha: ");
-
-        txt_diaChiCha.setText("jLabel41");
-
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel42.setText("Họ tên mẹ:");
-
-        txt_tenMe.setText("jLabel43");
-
-        jLabel44.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel44.setText("Năm sinh mẹ: ");
-
-        txt_namSinhMe.setText("jLabel45");
-
-        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel46.setText("SDT mẹ: ");
-
-        txt_sdtMe.setText("jLabel47");
-
-        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel48.setText("Nghề nghiệp mẹ: ");
-
-        txt_ngheNghiepMe.setText("jLabel49");
-
-        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel50.setText("Địa chỉ mẹ: ");
-
-        txt_diaChiMe.setText("jLabel51");
-
-        jLabel52.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel52.setText("Tên chủ hộ:");
-
-        txt_tenChuHo.setText("jLabel53");
-
-        jButton_quayLai.setText("Quay Lại");
-        jButton_quayLai.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_quayLaiActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -286,7 +286,7 @@ public class ChiTietSinhVien extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_khoa, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -375,8 +375,7 @@ public class ChiTietSinhVien extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_lop, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(txt_lop, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(46, 46, 46)
@@ -416,13 +415,14 @@ public class ChiTietSinhVien extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(txt_lop))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_ngaySinh)
-                    .addComponent(jLabel13)
-                    .addComponent(txt_sdt)
-                    .addComponent(jLabel15)
-                    .addComponent(txt_email)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txt_ngaySinh)
+                        .addComponent(jLabel13)
+                        .addComponent(txt_sdt)
+                        .addComponent(jLabel15)
+                        .addComponent(txt_email)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
@@ -477,7 +477,7 @@ public class ChiTietSinhVien extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel52)
                     .addComponent(txt_tenChuHo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(jButton_quayLai)
                 .addGap(23, 23, 23))
         );
@@ -516,12 +516,19 @@ public class ChiTietSinhVien extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ChiTietSinhVien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
-                new ChiTietSinhVien().setVisible(true);
+                ChiTietSinhVien dialog = new ChiTietSinhVien(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }

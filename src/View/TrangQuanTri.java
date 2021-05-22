@@ -241,7 +241,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Hãy chọn một sinh viên!");
         }
         else
-        new ChiTietSinhVien(list.get(selectedRow)).setVisible(true);
+        new ChiTietSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow)).setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_jMenuChiTietActionPerformed
 
     private void jMenuXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuXoaActionPerformed
