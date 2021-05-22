@@ -16,6 +16,7 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,6 +29,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
      * Creates new form TrangQuanTri
      */
     ArrayList<SinhVien> list = new ArrayList<>();
+    ArrayList<SinhVien> listTimKiem;
     DBConnection dbconnection = new DBConnection();
     Connection cnt;
     public TrangQuanTri() {
@@ -42,6 +44,15 @@ public class TrangQuanTri extends javax.swing.JFrame {
 
     public void loadTable(){
         tblSinhVien.setModel(new SVCustomTable(list));
+    }
+    public void loadTableTimKiem(ArrayList<SinhVien> ds) {
+        if (ds.size() < 1) {
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame, "Không tồn tại sinh viên!", "Thông báo", JOptionPane.ERROR_MESSAGE);
+            frame.setLocationRelativeTo(null);
+        } else {
+            tblSinhVien.setModel(new SVCustomTable(ds));
+        }
     }
     public void loadCSDL(){
         ResultSet rs = dbconnection.layThongTinSinhVien();
@@ -92,6 +103,55 @@ public class TrangQuanTri extends javax.swing.JFrame {
             Logger.getLogger(TrangQuanTri.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public void loadCSDLTimKiem() {
+        ResultSet rs = dbconnection.layThongTinSinhVien();
+        try {
+            while (rs.next()) {
+                SinhVien x = new SinhVien();
+                x.setMaSV(rs.getString("MASV"));
+                x.setTenSV(rs.getString("TENSV"));
+                x.setKhoaQL(rs.getString("KHOA"));
+                x.setLop(rs.getString("LOP"));
+
+                ThongTinSV ttsv = new ThongTinSV();
+                SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+                String dt = date.format(rs.getDate("NGAYSINH"));
+                ttsv.setNgaySinh(dt);
+                ttsv.setSdtSV(rs.getString("SDTSV"));
+                ttsv.setEmailSV(rs.getString("EMAILSV"));
+                ttsv.setQuocTich(rs.getString("QUOCTICH"));
+                ttsv.setNoiThuongTru(rs.getString("NOITHUONGTRU"));
+                ttsv.setNoiTamTru(rs.getString("NOITAMTRU"));
+                ttsv.setDanToc(rs.getString("DANTOC"));
+                ttsv.setDanToc(rs.getString("DANTOC"));
+                ttsv.setTonGiao(rs.getString("TONGIAO"));
+                ttsv.setSoCCCD(rs.getString("SOCCCD"));
+                ttsv.setTenNganHang(rs.getString("TENNGANHANG"));
+                ttsv.setStkNganHang(rs.getString("STKNGANHANG"));
+                ttsv.setMaBHYT(rs.getString("MABHYT"));
+                x.setThongTinSV(ttsv);
+
+                ThongTinGD ttgd = new ThongTinGD();
+                ttgd.setHoTenCha(rs.getString("HOTENCHA"));
+                ttgd.setNamSinhCha(rs.getInt("NAMSINHCHA"));
+                ttgd.setDienThoaiCha(rs.getString("DIENTHOAICHA"));
+                ttgd.setNgheNghiepCha(rs.getString("NGHENGHIEPCHA"));
+                ttgd.setDiaChiLienHeCha(rs.getString("DIACHILIENHECHA"));
+                ttgd.setHoTenMe(rs.getString("HOTENME"));
+                ttgd.setNamSinhMe(rs.getInt("NAMSINHME"));
+                ttgd.setDienThoaiMe(rs.getString("DIENTHOAIME"));
+                ttgd.setNgheNghiepMe(rs.getString("NGHENGHIEPME"));
+                ttgd.setDiaChiLienHeMe(rs.getString("DIACHILIENHEME"));
+                ttgd.setHoTenChuHo(rs.getString("HOTENCHUHO"));
+                x.setThongTinGD(ttgd);
+                if (txtMaTenSV.getText().equals(x.getMaSV()) || txtMaTenSV.getText().equals(x.getTenSV())) {
+                    listTimKiem.add(x);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TrangQuanTri.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,13 +167,14 @@ public class TrangQuanTri extends javax.swing.JFrame {
         jMenuXoa = new javax.swing.JMenuItem();
         jMenuSua = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtMaSV = new javax.swing.JTextField();
+        jMaTenSV = new javax.swing.JLabel();
+        txtMaTenSV = new javax.swing.JTextField();
         btnTimKiem = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblSinhVien = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuThemSinhVien = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -144,13 +205,19 @@ public class TrangQuanTri extends javax.swing.JFrame {
         jPopUpTblSV.add(jMenuSua);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("DANH SÁCH SINH VIÊN");
 
-        jLabel2.setText("Mã sinh viên:");
+        jMaTenSV.setText("Mã / Tên sinh viên:");
 
         btnTimKiem.setText("Tìm kiếm");
+        btnTimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimKiemActionPerformed(evt);
+            }
+        });
 
         tblSinhVien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -167,6 +234,15 @@ public class TrangQuanTri extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tblSinhVien);
 
         jMenu1.setText("Nhập mới sinh viên");
+
+        jMenuThemSinhVien.setText("Thêm sinh viên");
+        jMenuThemSinhVien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuThemSinhVienActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuThemSinhVien);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Hoạt động");
@@ -199,36 +275,36 @@ public class TrangQuanTri extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtMaSV, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnTimKiem)
-                .addGap(44, 44, 44))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(380, 380, 380))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(298, 298, 298)
+                        .addComponent(jMaTenSV)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMaTenSV, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnTimKiem))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(354, 354, 354)
-                        .addComponent(jLabel1)))
-                .addContainerGap(171, Short.MAX_VALUE))
+                        .addGap(33, 33, 33)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtMaSV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jMaTenSV)
+                    .addComponent(txtMaTenSV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTimKiem))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(136, 136, 136))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
 
         pack();
@@ -264,6 +340,18 @@ public class TrangQuanTri extends javax.swing.JFrame {
             JOptionPane.showConfirmDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_jMenuXoaActionPerformed
+
+    private void jMenuThemSinhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuThemSinhVienActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jMenuThemSinhVienActionPerformed
+
+    private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
+        // TODO add your handling code here:
+        listTimKiem = new ArrayList<>();
+        loadCSDLTimKiem();
+        loadTableTimKiem(listTimKiem);
+    }//GEN-LAST:event_btnTimKiemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -303,7 +391,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnTimKiem;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jMaTenSV;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -315,10 +403,11 @@ public class TrangQuanTri extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuSua;
+    private javax.swing.JMenuItem jMenuThemSinhVien;
     private javax.swing.JMenuItem jMenuXoa;
     private javax.swing.JPopupMenu jPopUpTblSV;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblSinhVien;
-    private javax.swing.JTextField txtMaSV;
+    private javax.swing.JTextField txtMaTenSV;
     // End of variables declaration//GEN-END:variables
 }
