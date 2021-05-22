@@ -51,7 +51,8 @@ public class TrangQuanTri extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(frame, "Không tồn tại sinh viên!", "Thông báo", JOptionPane.ERROR_MESSAGE);
             frame.setLocationRelativeTo(null);
         } else {
-            tblSinhVien.setModel(new SVCustomTable(ds));
+            list = new ArrayList<>(listTimKiem);
+            loadTable();
         }
     }
     public void loadCSDL(){
@@ -281,11 +282,11 @@ public class TrangQuanTri extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(298, 298, 298)
+                        .addGap(284, 284, 284)
                         .addComponent(jMaTenSV)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(txtMaTenSV, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btnTimKiem))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
@@ -343,7 +344,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
 
     private void jMenuThemSinhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuThemSinhVienActionPerformed
         // TODO add your handling code here:
-        
+        new ThemSinhVien().setVisible(true);
     }//GEN-LAST:event_jMenuThemSinhVienActionPerformed
 
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
