@@ -177,11 +177,11 @@ public class TrangQuanTri extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuThemSinhVien = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuQuanLyHoatDong = new javax.swing.JMenuItem();
+        jMenuXemDanhSachKhenThuong = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuQuanLyKyLuat = new javax.swing.JMenuItem();
+        jMenuXemDanhSachKyLuat = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         jPopUpTblSV.setComponentPopupMenu(jPopUpTblSV);
@@ -248,21 +248,41 @@ public class TrangQuanTri extends javax.swing.JFrame {
 
         jMenu2.setText("Hoạt động");
 
-        jMenuItem1.setText("Quản lý hoạt động");
-        jMenu2.add(jMenuItem1);
+        jMenuQuanLyHoatDong.setText("Quản lý hoạt động");
+        jMenuQuanLyHoatDong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuQuanLyHoatDongActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuQuanLyHoatDong);
 
-        jMenuItem2.setText("Xem danh sách khen thưởng");
-        jMenu2.add(jMenuItem2);
+        jMenuXemDanhSachKhenThuong.setText("Xem danh sách khen thưởng");
+        jMenuXemDanhSachKhenThuong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuXemDanhSachKhenThuongActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuXemDanhSachKhenThuong);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Kỷ luật");
 
-        jMenuItem3.setText("Quản lý kỷ luật");
-        jMenu3.add(jMenuItem3);
+        jMenuQuanLyKyLuat.setText("Quản lý kỷ luật");
+        jMenuQuanLyKyLuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuQuanLyKyLuatActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuQuanLyKyLuat);
 
-        jMenuItem5.setText("Xem danh sách kỷ luật");
-        jMenu3.add(jMenuItem5);
+        jMenuXemDanhSachKyLuat.setText("Xem danh sách kỷ luật");
+        jMenuXemDanhSachKyLuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuXemDanhSachKyLuatActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuXemDanhSachKyLuat);
 
         jMenuBar1.add(jMenu3);
 
@@ -296,7 +316,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -344,7 +364,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
 
     private void jMenuThemSinhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuThemSinhVienActionPerformed
         // TODO add your handling code here:
-        new ThemSinhVien().setVisible(true);
+        //new ThemSinhVien().setVisible(true);
     }//GEN-LAST:event_jMenuThemSinhVienActionPerformed
 
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
@@ -353,6 +373,30 @@ public class TrangQuanTri extends javax.swing.JFrame {
         loadCSDLTimKiem();
         loadTableTimKiem(listTimKiem);
     }//GEN-LAST:event_btnTimKiemActionPerformed
+
+    private void jMenuQuanLyHoatDongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuQuanLyHoatDongActionPerformed
+        // TODO add your handling code here:
+        new QuanLyHD().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuQuanLyHoatDongActionPerformed
+
+    private void jMenuXemDanhSachKhenThuongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuXemDanhSachKhenThuongActionPerformed
+        // TODO add your handling code here:
+        new XemDanhSachKhenThuong().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuXemDanhSachKhenThuongActionPerformed
+
+    private void jMenuQuanLyKyLuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuQuanLyKyLuatActionPerformed
+        // TODO add your handling code here:
+        new QuanLyKL().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuQuanLyKyLuatActionPerformed
+
+    private void jMenuXemDanhSachKyLuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuXemDanhSachKyLuatActionPerformed
+        // TODO add your handling code here:
+        new XemDanhSachKyLuat().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuXemDanhSachKyLuatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,12 +443,12 @@ public class TrangQuanTri extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuChiTiet;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuQuanLyHoatDong;
+    private javax.swing.JMenuItem jMenuQuanLyKyLuat;
     private javax.swing.JMenuItem jMenuSua;
     private javax.swing.JMenuItem jMenuThemSinhVien;
+    private javax.swing.JMenuItem jMenuXemDanhSachKhenThuong;
+    private javax.swing.JMenuItem jMenuXemDanhSachKyLuat;
     private javax.swing.JMenuItem jMenuXoa;
     private javax.swing.JPopupMenu jPopUpTblSV;
     private javax.swing.JScrollPane jScrollPane2;

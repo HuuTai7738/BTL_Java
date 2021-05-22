@@ -5,11 +5,14 @@
  */
 package Model;
 
+import java.util.Objects;
+
 /**
  *
  * @author Personal
  */
 public class KyLuat {
+    private String maSV;
     private String maKL;
     private String tenKL;
     private int diemTru;
@@ -17,10 +20,19 @@ public class KyLuat {
     public KyLuat() {
     }
 
-    public KyLuat(String maKL, String tenKL, int diemTru) {
+    public KyLuat(String maSV, String maKL, String tenKL, int diemTru) {
+        this.maSV = maSV;
         this.maKL = maKL;
         this.tenKL = tenKL;
         this.diemTru = diemTru;
+    }
+
+    public String getMaSV() {
+        return maSV;
+    }
+
+    public void setMaSV(String maSV) {
+        this.maSV = maSV;
     }
 
     public String getMaKL() {
@@ -46,4 +58,35 @@ public class KyLuat {
     public void setDiemTru(int diemTru) {
         this.diemTru = diemTru;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 41 * hash + Objects.hashCode(this.maSV);
+        hash = 41 * hash + Objects.hashCode(this.maKL);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final KyLuat other = (KyLuat) obj;
+        if (!Objects.equals(this.maSV, other.maSV)) {
+            return false;
+        }
+        if (!Objects.equals(this.maKL, other.maKL)) {
+            return false;
+        }
+        return true;
+    }
+
+    
 }
