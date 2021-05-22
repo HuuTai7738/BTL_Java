@@ -33,6 +33,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="S&#x1eed;a th&#xf4;ng tin"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuSuaActionPerformed"/>
+          </Events>
         </MenuItem>
       </SubComponents>
     </Container>

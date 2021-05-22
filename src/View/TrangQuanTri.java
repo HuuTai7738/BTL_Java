@@ -75,7 +75,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
                 ttsv.setNoiThuongTru(rs.getString("NOITHUONGTRU"));
                 ttsv.setNoiTamTru(rs.getString("NOITAMTRU"));
                 ttsv.setDanToc(rs.getString("DANTOC"));
-                ttsv.setDanToc(rs.getString("DANTOC"));
+                
                 ttsv.setTonGiao(rs.getString("TONGIAO"));
                 ttsv.setSoCCCD(rs.getString("SOCCCD"));
                 ttsv.setTenNganHang(rs.getString("TENNGANHANG"));
@@ -102,6 +102,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
             } 
         catch (SQLException ex) {
             Logger.getLogger(TrangQuanTri.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Lỗi kết nối với database!", "Lỗi!", JOptionPane.ERROR_MESSAGE);
         }
     }
     public void loadCSDLTimKiem() {
@@ -124,7 +125,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
                 ttsv.setNoiThuongTru(rs.getString("NOITHUONGTRU"));
                 ttsv.setNoiTamTru(rs.getString("NOITAMTRU"));
                 ttsv.setDanToc(rs.getString("DANTOC"));
-                ttsv.setDanToc(rs.getString("DANTOC"));
+               
                 ttsv.setTonGiao(rs.getString("TONGIAO"));
                 ttsv.setSoCCCD(rs.getString("SOCCCD"));
                 ttsv.setTenNganHang(rs.getString("TENNGANHANG"));
@@ -203,6 +204,11 @@ public class TrangQuanTri extends javax.swing.JFrame {
         jPopUpTblSV.add(jMenuXoa);
 
         jMenuSua.setText("Sửa thông tin");
+        jMenuSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuSuaActionPerformed(evt);
+            }
+        });
         jPopUpTblSV.add(jMenuSua);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -335,7 +341,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
         // TODO add your handling code here:
         int selectedRow = tblSinhVien.getSelectedRow();
         if(selectedRow == -1){
-            JOptionPane.showMessageDialog(null, "Hãy chọn một sinh viên!");
+            JOptionPane.showMessageDialog(null, "Hãy chọn một sinh viên!","Lỗi!", JOptionPane.ERROR_MESSAGE);
         }
         else
         new ChiTietSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow)).setVisible(rootPaneCheckingEnabled);
@@ -357,8 +363,11 @@ public class TrangQuanTri extends javax.swing.JFrame {
                 }
             }
         }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(rootPane, "Xóa thất bại!","Lỗi!", JOptionPane.ERROR_MESSAGE);
+        }
         catch(Exception ex){
-            JOptionPane.showConfirmDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(),"Lỗi!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jMenuXoaActionPerformed
 
@@ -397,6 +406,11 @@ public class TrangQuanTri extends javax.swing.JFrame {
         new XemDanhSachKyLuat().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuXemDanhSachKyLuatActionPerformed
+    private void jMenuSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSuaActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblSinhVien.getSelectedRow();
+        new SuaThongTinSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow),dbconnection.layMatKhau(list.get(selectedRow).getMaSV())).setVisible(rootPaneCheckingEnabled);
+    }//GEN-LAST:event_jMenuSuaActionPerformed
 
     /**
      * @param args the command line arguments

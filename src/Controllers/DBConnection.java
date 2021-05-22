@@ -172,7 +172,7 @@ public class DBConnection {
         return rs;
     }
     
-    public void xoaSinhVien(String maSV){
+    public void xoaSinhVien(String maSV) throws SQLException{
         PreparedStatement ps;
         String xoaTK = "DELETE FROM TAIKHOAN WHERE MASV = ?";
         String xoaThongTinGD = "DELETE FROM THONGTINGIADINH WHERE MASV = ?";
@@ -180,7 +180,8 @@ public class DBConnection {
         String xoaHoatDong = "DELETE FROM HOATDONG WHERE MASV = ?";
         String xoaKiLuat = "DELETE FROM KILUAT WHERE MASV = ?";
         String xoaSinhVien = "DELETE FROM SINHVIEN WHERE MASV = ?";
-        try {
+       
+        
             ps = cont.prepareStatement(xoaTK);
             ps.setString(1, maSV);
             ps.executeUpdate();
@@ -204,8 +205,21 @@ public class DBConnection {
             ps = cont.prepareStatement(xoaSinhVien);
             ps.setString(1, maSV);
             ps.executeUpdate();
+        
+    }
+    public String layMatKhau(String maSV){
+        String matkhau = null;
+        String sql = "SELECT MATKHAU FROM TAIKHOAN WHERE MASV = ?";
+        try {
+            PreparedStatement ps = cont.prepareStatement(sql);
+            ps.setString(1, maSV);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            matkhau = rs.getString("MATKHAU");
+            }
         } catch (SQLException ex) {
             Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
+            return matkhau;
     }
 }
