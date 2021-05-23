@@ -275,32 +275,36 @@ public class QuanLyHD extends javax.swing.JFrame {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         con.getConnection();
-        String maSV, maHD, tenHD;
-        int diemCong = 0;
-        maSV = txtMaSV.getText();
-        maHD = txtMaHoatDong.getText();
-        tenHD = txtTenHoatDong.getText();
-        try {
-            diemCong = Integer.parseInt(txtDiemCong.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Điểm cộng phải là số!");
-        }
-        HoatDong hd = new HoatDong(maSV, maHD,tenHD, diemCong);
-        if (maSV.isEmpty() || maHD.isEmpty() || tenHD.isEmpty() || txtDiemCong.getText().isEmpty()) {
+        String maSV = txtMaSV.getText();
+        String maHD = txtMaHoatDong.getText();
+        String tenHD = txtTenHoatDong.getText();
+        int diemCong=0;
+        if(maSV.isEmpty() || maHD.isEmpty()|| tenHD.isEmpty() || txtDiemCong.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Các trường không được để trống!");
-        } else if(con.kiemTra(maSV)){
-            if(list.contains(hd)){
-                JOptionPane.showMessageDialog(this,"Hoạt động của sinh viên đã tồn tại!");
+        }else{
+            HoatDong hd = null;
+            try {
+                diemCong = Integer.parseInt(txtDiemCong.getText());
+                hd = new HoatDong(maSV, maHD,tenHD, diemCong);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Điểm cộng phải là số!","Lỗi",JOptionPane.ERROR_MESSAGE);
+                return;
             }
-            else{
-                try {
-                    con.themHoatDong(hd);
-                    list.add(hd);
-                    hienThiDuLieu();
-                    xoaTrang();
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(this,"Thêm không thành công");
-                }       
+            if(con.kiemTra(maSV)){
+                if(list.contains(hd)){
+                    JOptionPane.showMessageDialog(this,"Hoạt động của sinh viên đã tồn tại!","Lỗi",JOptionPane.ERROR_MESSAGE);
+                }else{
+                    try {
+                        con.themHoatDong(hd);
+                        list.add(hd);
+                        hienThiDuLieu();
+                        xoaTrang();
+                    } catch (SQLException ex) {
+                        JOptionPane.showMessageDialog(this,"Thêm không thành công!");
+                    }
+                }
+            }else{
+                JOptionPane.showMessageDialog(this,"Mã sinh viên này không tồn tại","Lỗi",JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_btnThemActionPerformed

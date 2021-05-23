@@ -602,7 +602,7 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
         JTextComponent text[] = {txt_Lop,txt_matKhau,txt_NgaySinh,txt_khoa,txt_quocTich,txt_sdtSV,txt_tenSV,txt_danToc,txt_soCCCD};
         try{
            for(int i = 0; i < text.length; i++){
-               if(text[i].getText().trim().isBlank())
+               if(text[i].getText().trim().isEmpty())
                    throw new Exception("Không được để trống!");
            }
            sv.setMaSV(txt_maSV.getText());
