@@ -313,13 +313,15 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel34" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_tenCha" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_nsCha" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_sdtCha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_tenCha" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_nsCha" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_sdtCha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">

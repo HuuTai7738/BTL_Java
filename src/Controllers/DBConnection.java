@@ -6,7 +6,12 @@
 package Controllers;
 import Model.HoatDong;
 import Model.KyLuat;
+import Model.SinhVien;
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -221,5 +226,65 @@ public class DBConnection {
             Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
             return matkhau;
+    }
+    public void suaSinhVien(SinhVien sv, String matKhau) throws SQLException{
+        String suaTaiKhoan = "UPDATE TAIKHOAN SET MATKHAU = ? WHERE MASV = ?";
+        String suaThongTinGD = "UPDATE THONGTINGIADINH SET HOTENCHA = ?, NAMSINHCHA = ?, DIENTHOAICHA = ?, NGHENGHIEPCHA = ?, DIACHILIENHECHA = ?, HOTENME = ?, NAMSINHME = ?, DIENTHOAIME = ?,NGHENGHIEPME = ?, DIACHILIENHEME = ?,HOTENCHUHO = ? WHERE MASV = ?";
+        String suaThongTinSV = "UPDATE THONGTINSINHVIEN SET NGAYSINH = ?, SDTSV = ?, EMAILSV = ?, QUOCTICH = ?, NOITHUONGTRU = ?, NOITAMTRU = ?, DANTOC = ?, TONGIAO = ?, SOCCCD = ?, TENNGANHANG = ?, STKNGANHANG = ? , MABHYT = ? WHERE MASV = ?";
+        String suaSV = "UPDATE SINHVIEN SET TENSV = ?, KHOA = ?,LOP = ? WHERE MASV = ?";
+        
+        PreparedStatement ps;
+        ps = cont.prepareStatement(suaTaiKhoan);
+        ps.setString(1, matKhau);
+        ps.setString(2, sv.getMaSV());
+        ps.executeUpdate();
+        
+        ps = cont.prepareStatement(suaThongTinGD);
+        ps.setString(1, sv.getThongTinGD().getHoTenCha());
+        ps.setInt(2, sv.getThongTinGD().getNamSinhCha());
+        ps.setString(3, sv.getThongTinGD().getDienThoaiCha());
+        ps.setString(4, sv.getThongTinGD().getNgheNghiepCha());
+        ps.setString(5, sv.getThongTinGD().getDiaChiLienHeCha());
+        ps.setString(6, sv.getThongTinGD().getHoTenMe());
+        ps.setInt(7, sv.getThongTinGD().getNamSinhMe());
+        ps.setString(8, sv.getThongTinGD().getDienThoaiMe());
+        ps.setString(9, sv.getThongTinGD().getNgheNghiepMe());
+        ps.setString(10, sv.getThongTinGD().getDiaChiLienHeMe());
+        ps.setString(11, sv.getThongTinGD().getHoTenChuHo());
+        ps.setString(12, sv.getMaSV());
+        ps.executeUpdate();
+        
+        ps = cont.prepareStatement(suaThongTinSV);
+        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
+        
+        
+        ;
+        try {
+            ps.setDate(1, new Date(dt.parse(sv.getThongTinSV().getNgaySinh()).getTime()));
+        } catch (ParseException ex) {
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ps.setString(2, sv.getThongTinSV().getSdtSV());
+        ps.setString(3, sv.getThongTinSV().getEmailSV());
+        ps.setString(4, sv.getThongTinSV().getQuocTich());
+        ps.setString(5, sv.getThongTinSV().getNoiThuongTru());
+        ps.setString(6, sv.getThongTinSV().getNoiTamTru());
+        ps.setString(7, sv.getThongTinSV().getDanToc());
+        ps.setString(8, sv.getThongTinSV().getTonGiao());
+        ps.setString(9, sv.getThongTinSV().getSoCCCD());
+        ps.setString(10, sv.getThongTinSV().getSoCCCD());
+        ps.setString(11, sv.getThongTinSV().getTenNganHang());
+        ps.setString(12, sv.getThongTinSV().getStkNganHang());
+        ps.setString(13, sv.getMaSV());
+        ps.executeUpdate();
+        
+        ps = cont.prepareStatement(suaSV);
+        ps.setString(1, sv.getTenSV());
+        ps.setString(2, sv.getKhoaQL());
+        ps.setString(3, sv.getLop());
+        ps.setString(4, sv.getMaSV());
+        ps.executeUpdate();
+        
+        
     }
 }

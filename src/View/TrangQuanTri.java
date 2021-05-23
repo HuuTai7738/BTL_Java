@@ -11,7 +11,7 @@ import Model.SinhVien;
 import Model.ThongTinGD;
 import Model.ThongTinSV;
 import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
+
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
@@ -152,6 +152,17 @@ public class TrangQuanTri extends javax.swing.JFrame {
             }
         } catch (SQLException ex) {
             Logger.getLogger(TrangQuanTri.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    void capNhatSinhVien(SinhVien sv, String matKhau, int selectedRow) {
+        try {
+            dbconnection.suaSinhVien(sv, matKhau);
+            list.set(selectedRow, sv);
+            loadTable();
+            JOptionPane.showMessageDialog(rootPane, "Sửa thành công!", "Thành công!", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(TrangQuanTri.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Sửa thất bại! ", "Lỗi",JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -409,7 +420,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
     private void jMenuSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSuaActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblSinhVien.getSelectedRow();
-        new SuaThongTinSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow),dbconnection.layMatKhau(list.get(selectedRow).getMaSV())).setVisible(rootPaneCheckingEnabled);
+        new SuaThongTinSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow),dbconnection.layMatKhau(list.get(selectedRow).getMaSV()),selectedRow).setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_jMenuSuaActionPerformed
 
     /**
@@ -469,4 +480,6 @@ public class TrangQuanTri extends javax.swing.JFrame {
     private javax.swing.JTable tblSinhVien;
     private javax.swing.JTextField txtMaTenSV;
     // End of variables declaration//GEN-END:variables
+
+    
 }

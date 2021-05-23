@@ -8,12 +8,8 @@ package View;
 import Model.SinhVien;
 import Model.ThongTinGD;
 import Model.ThongTinSV;
-import com.sun.org.apache.bcel.internal.generic.AALOAD;
-import java.awt.Component;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.text.JTextComponent;
@@ -28,15 +24,19 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
      * Creates new form SuaThongTinSinhVien
      */
     private TrangQuanTri qt;
+    int row;
     
     
-    public SuaThongTinSinhVien(java.awt.Frame parent, boolean modal, SinhVien sv, String matKhau) {
+    public SuaThongTinSinhVien(java.awt.Frame parent, boolean modal, SinhVien sv, String matKhau, int selectedRow) {
         super(parent, modal);
         qt =(TrangQuanTri) parent;
         initComponents();
         this.setLocationRelativeTo(null);
         this.setTitle("Sửa thông tin sinh viên");
+        this.row = selectedRow;
+        
         txt_maSV.setText(sv.getMaSV());
+        txt_maSV.setEditable(false);
         txt_matKhau.setText(matKhau);
         txt_tenSV.setText(sv.getTenSV());
         txt_khoa.setText(sv.getKhoaQL());
@@ -46,6 +46,8 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
         txt_NgaySinh.setText(sv.getThongTinSV().getNgaySinh());
         txt_email.setText(sv.getThongTinSV().getEmailSV());
         txt_quocTich.setText(sv.getThongTinSV().getQuocTich());
+        txt_danToc.setText(sv.getThongTinSV().getDanToc());
+        txt_tonGiao.setText(sv.getThongTinSV().getTonGiao());
         txt_soCCCD.setText(sv.getThongTinSV().getSoCCCD());
         txt_noiThuongTru.setText(sv.getThongTinSV().getNoiThuongTru());
         txt_noiTamTru.setText(sv.getThongTinSV().getNoiTamTru());
@@ -545,13 +547,14 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel31)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(jLabel34)
-                    .addComponent(jLabel36)
-                    .addComponent(txt_tenCha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_nsCha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_sdtCha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel32)
+                        .addComponent(jLabel36)
+                        .addComponent(txt_tenCha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_nsCha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_sdtCha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
@@ -596,7 +599,13 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
         String matKhau = null;
         SinhVien sv = new SinhVien();
         SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        JTextComponent text[] = {txt_Lop,txt_matKhau,txt_NgaySinh,txt_khoa,txt_quocTich,txt_sdtSV,txt_tenSV,txt_danToc,txt_soCCCD};
         try{
+           for(int i = 0; i < text.length; i++){
+               if(text[i].getText().trim().isBlank())
+                   throw new Exception("Không được để trống!");
+           }
+           sv.setMaSV(txt_maSV.getText());
            matKhau = txt_matKhau.getText();
            sv.setTenSV(txt_tenSV.getText());
            sv.setKhoaQL(txt_khoa.getText());
@@ -609,7 +618,7 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
             ttsv.setNgaySinh(txt_NgaySinh.getText());
            }
            catch(ParseException ex){
-               JOptionPane.showMessageDialog(rootPane, "Ngày không hợp lệ", "Lỗi!", JOptionPane.ERROR_MESSAGE);
+               JOptionPane.showMessageDialog(rootPane, "Ngày không hợp lệ(dd/MM/yyyy)", "Lỗi!", JOptionPane.ERROR_MESSAGE);
            }
             ttsv.setSdtSV(txt_sdtSV.getText());
             ttsv.setEmailSV(txt_email.getText());
@@ -639,12 +648,12 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
             ttgd.setHoTenChuHo(txt_tenChuHo.getText());
             sv.setThongTinGD(ttgd);
         }
-        catch(NullPointerException ex){
-            JOptionPane.showMessageDialog(rootPane, "Không được để trống!", "Lỗi!", JOptionPane.ERROR_MESSAGE);
-        }
+        
         catch(Exception e ){
             JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Lỗi!", JOptionPane.ERROR_MESSAGE);
         }
+        qt.capNhatSinhVien(sv,matKhau,row);
+        this.dispose();
     }//GEN-LAST:event_btn_luuActionPerformed
 
     /**
