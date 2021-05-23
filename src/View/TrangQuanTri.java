@@ -432,10 +432,10 @@ public class TrangQuanTri extends javax.swing.JFrame {
         // TODO add your handling code here:
         int exit=JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn đăng xuất","Xác nhân đăng xuất",JOptionPane.YES_NO_OPTION);
         if(exit==JOptionPane.YES_OPTION){
-            this.setVisible(false);
+            this.dispose();
             new Dangnhap().setVisible(true);
         }
-        else this.setVisible(true);
+        
     }//GEN-LAST:event_DangXuatMouseClicked
 
     /**
