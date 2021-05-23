@@ -194,7 +194,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuQuanLyKyLuat = new javax.swing.JMenuItem();
         jMenuXemDanhSachKyLuat = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        DangXuat = new javax.swing.JMenu();
 
         jPopUpTblSV.setComponentPopupMenu(jPopUpTblSV);
 
@@ -303,8 +303,13 @@ public class TrangQuanTri extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Đăng xuất");
-        jMenuBar1.add(jMenu4);
+        DangXuat.setText("Đăng xuất");
+        DangXuat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DangXuatMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(DangXuat);
 
         setJMenuBar(jMenuBar1);
 
@@ -423,6 +428,16 @@ public class TrangQuanTri extends javax.swing.JFrame {
         new SuaThongTinSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow),dbconnection.layMatKhau(list.get(selectedRow).getMaSV()),selectedRow).setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_jMenuSuaActionPerformed
 
+    private void DangXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DangXuatMouseClicked
+        // TODO add your handling code here:
+        int exit=JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn đăng xuất","Xác nhân đăng xuất",JOptionPane.YES_NO_OPTION);
+        if(exit==JOptionPane.YES_OPTION){
+            this.setVisible(false);
+            new Dangnhap().setVisible(true);
+        }
+        else this.setVisible(true);
+    }//GEN-LAST:event_DangXuatMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -459,13 +474,13 @@ public class TrangQuanTri extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu DangXuat;
     private javax.swing.JButton btnTimKiem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jMaTenSV;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuChiTiet;
     private javax.swing.JMenuItem jMenuQuanLyHoatDong;
