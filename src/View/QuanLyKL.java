@@ -278,35 +278,38 @@ public class QuanLyKL extends javax.swing.JFrame {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         con.getConnection();
-        String maSV, maKL, tenKL;
-        int diemTru = 0;
-        maSV = txtMaSV.getText();
-        maKL = txtMaKyLuat.getText();
-        tenKL = txtTenKyLuat.getText();
-        try {
-            diemTru = Integer.parseInt(txtDiemTru.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Điểm trừ phải là số!");
-        }
-        KyLuat kL = new KyLuat(maSV, maKL, tenKL, diemTru);
-        if (maSV.isEmpty() || maKL.isEmpty() || tenKL.isEmpty() || txtDiemTru.getText().isEmpty()) {
+        String maSV = txtMaSV.getText();
+        String maKL = txtMaKyLuat.getText();
+        String tenKL= txtTenKyLuat.getText();
+        int diemTru=0;
+        if(maSV.isEmpty() || maKL.isEmpty()|| tenKL.isEmpty() || txtDiemTru.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Các trường không được để trống!");
-        } else if(con.kiemTra(maSV)){
-            if(list.contains(kL)){
-                JOptionPane.showMessageDialog(this,"Kỷ luật của sinh viên đã tồn tại!");
+        }else{
+            KyLuat kL = null;
+            try {
+                diemTru = Integer.parseInt(txtDiemTru.getText());
+                kL = new KyLuat(maSV, maKL,tenKL, diemTru);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Điểm trừ phải là số!","Lỗi",JOptionPane.ERROR_MESSAGE);
+                return;
             }
-            else{
-                try {
-                    con.themKyLuat(maSV, kL);
-                    list.add(kL);
-                    hienThiDuLieu();
-                    xoaTrang();
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(this,"Thêm không thành công");
-                }       
+            if(con.kiemTra(maSV)){
+                if(list.contains(kL)){
+                    JOptionPane.showMessageDialog(this,"Kỷ luật của sinh viên đã tồn tại!","Lỗi",JOptionPane.ERROR_MESSAGE);
+                }else{
+                    try {
+                        con.themKyLuat(kL);
+                        list.add(kL);
+                        hienThiDuLieu();
+                        xoaTrang();
+                    } catch (SQLException ex) {
+                        JOptionPane.showMessageDialog(this,"Thêm không thành công!");
+                    }
+                }
+            }else{
+                JOptionPane.showMessageDialog(this,"Mã sinh viên này không tồn tại","Lỗi",JOptionPane.ERROR_MESSAGE);
             }
         }
-        
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed

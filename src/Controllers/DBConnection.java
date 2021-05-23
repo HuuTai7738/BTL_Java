@@ -139,7 +139,7 @@ public class DBConnection {
         }
         return list;
     }
-    public int themKyLuat(String maSV,KyLuat kL) throws SQLException{
+    public int themKyLuat(KyLuat kL) throws SQLException{
         String sql="insert into KILUAT values(?,?,?,?)";
         PreparedStatement ps=cont.prepareStatement(sql);
         ps.setString(1,kL.getMaSV());
