@@ -48,10 +48,8 @@ public class XemDanhSachKyLuat extends javax.swing.JFrame {
                 }
             }     
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this,"Lỗi:Không thể kết nối được với CSDL");
-        }
-       
-        
+            JOptionPane.showMessageDialog(this,e.getMessage(),"Lỗi",JOptionPane.ERROR_MESSAGE);
+        } 
     }
 
     /**

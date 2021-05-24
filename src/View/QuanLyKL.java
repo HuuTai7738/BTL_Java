@@ -12,8 +12,6 @@ import Controllers.DBConnection;
 import Model.KyLuat;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -114,7 +112,7 @@ public class QuanLyKL extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Quản lý kỷ luật");
+        jLabel1.setText("QUẢN LÝ KỶ LUẬT");
 
         jLabel4.setText("Mã kỷ luật:");
 
@@ -231,7 +229,7 @@ public class QuanLyKL extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(250, 250, 250))
+                .addGap(227, 227, 227))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,7 +328,7 @@ public class QuanLyKL extends javax.swing.JFrame {
                     list.remove(dongChon);
                     hienThiDuLieu();
                 } catch (SQLException ex) {
-                    Logger.getLogger(QuanLyHD.class.getName()).log(Level.SEVERE, null, ex);
+                    JOptionPane.showMessageDialog(this,ex.getMessage(),"Lỗi",JOptionPane.ERROR_MESSAGE);
                 }
 
             }
