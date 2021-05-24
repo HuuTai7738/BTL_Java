@@ -258,7 +258,7 @@ public class DBConnection {
         SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
         
         
-        ;
+        
         try {
             ps.setDate(1, new Date(dt.parse(sv.getThongTinSV().getNgaySinh()).getTime()));
         } catch (ParseException ex) {
