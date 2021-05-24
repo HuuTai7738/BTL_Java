@@ -97,17 +97,17 @@ public class TrangSV extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
-        txt_hotencha = new javax.swing.JTextField();
-        txt_nscha = new javax.swing.JTextField();
-        txt_dtcha = new javax.swing.JTextField();
-        txt_nghecha = new javax.swing.JTextField();
-        txt_dccha = new javax.swing.JTextField();
-        txt_hotenme = new javax.swing.JTextField();
-        txt_nsme = new javax.swing.JTextField();
-        txt_dtme = new javax.swing.JTextField();
-        txt_ngheme = new javax.swing.JTextField();
-        txt_dcme = new javax.swing.JTextField();
-        txt_chuho = new javax.swing.JTextField();
+        txt_hotencha = new javax.swing.JLabel();
+        txt_nscha = new javax.swing.JLabel();
+        txt_dtcha = new javax.swing.JLabel();
+        txt_nghecha = new javax.swing.JLabel();
+        txt_dccha = new javax.swing.JLabel();
+        txt_hotenme = new javax.swing.JLabel();
+        txt_nsme = new javax.swing.JLabel();
+        txt_dtme = new javax.swing.JLabel();
+        txt_ngheme = new javax.swing.JLabel();
+        txt_dcme = new javax.swing.JLabel();
+        txt_chuho = new javax.swing.JLabel();
         btn_xemhdcn = new javax.swing.JButton();
         btn_dangxuat = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -125,19 +125,19 @@ public class TrangSV extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txt_masv = new javax.swing.JTextField();
-        txt_ns = new javax.swing.JTextField();
-        txt_sdt = new javax.swing.JTextField();
-        txt_email = new javax.swing.JTextField();
-        txt_quoctich = new javax.swing.JTextField();
-        txt_dcthuongtru = new javax.swing.JTextField();
-        txt_dctamtru = new javax.swing.JTextField();
-        txt_dantoc = new javax.swing.JTextField();
-        txt_tongiao = new javax.swing.JTextField();
-        txt_cmnd = new javax.swing.JTextField();
-        txt_tennganhang = new javax.swing.JTextField();
-        txt_songanhang = new javax.swing.JTextField();
-        txt_bhyt = new javax.swing.JTextField();
+        txt_masv = new javax.swing.JLabel();
+        txt_ns = new javax.swing.JLabel();
+        txt_sdt = new javax.swing.JLabel();
+        txt_email = new javax.swing.JLabel();
+        txt_quoctich = new javax.swing.JLabel();
+        txt_dcthuongtru = new javax.swing.JLabel();
+        txt_dctamtru = new javax.swing.JLabel();
+        txt_dantoc = new javax.swing.JLabel();
+        txt_tongiao = new javax.swing.JLabel();
+        txt_cmnd = new javax.swing.JLabel();
+        txt_tennganhang = new javax.swing.JLabel();
+        txt_songanhang = new javax.swing.JLabel();
+        txt_bhyt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -166,11 +166,27 @@ public class TrangSV extends javax.swing.JFrame {
 
         jLabel39.setText("Họ tên chủ hộ");
 
-        txt_dccha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_dcchaActionPerformed(evt);
-            }
-        });
+        txt_hotencha.setText("jLabel15");
+
+        txt_nscha.setText("jLabel15");
+
+        txt_dtcha.setText("jLabel15");
+
+        txt_nghecha.setText("jLabel15");
+
+        txt_dccha.setText("jLabel15");
+
+        txt_hotenme.setText("jLabel15");
+
+        txt_nsme.setText("jLabel15");
+
+        txt_dtme.setText("jLabel15");
+
+        txt_ngheme.setText("jLabel15");
+
+        txt_dcme.setText("jLabel15");
+
+        txt_chuho.setText("jLabel15");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -195,19 +211,19 @@ public class TrangSV extends javax.swing.JFrame {
                     .addComponent(jLabel38)
                     .addComponent(jLabel39))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_chuho, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txt_dcme)
-                        .addComponent(txt_nghecha)
-                        .addComponent(txt_dtcha)
-                        .addComponent(txt_nscha)
-                        .addComponent(txt_dccha)
-                        .addComponent(txt_hotenme)
-                        .addComponent(txt_nsme)
-                        .addComponent(txt_dtme)
-                        .addComponent(txt_ngheme, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                        .addComponent(txt_hotencha))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_hotencha)
+                    .addComponent(txt_nscha)
+                    .addComponent(txt_dtcha)
+                    .addComponent(txt_nghecha)
+                    .addComponent(txt_dccha)
+                    .addComponent(txt_hotenme)
+                    .addComponent(txt_nsme)
+                    .addComponent(txt_dtme)
+                    .addComponent(txt_ngheme)
+                    .addComponent(txt_dcme)
+                    .addComponent(txt_chuho))
+                .addGap(71, 71, 71))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,48 +233,48 @@ public class TrangSV extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
-                    .addComponent(txt_hotencha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_hotencha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
-                    .addComponent(txt_nscha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nscha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(txt_dtcha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_dtcha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(txt_nghecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nghecha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
-                    .addComponent(txt_dccha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_dccha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
-                    .addComponent(txt_hotenme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_hotenme))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
-                    .addComponent(txt_nsme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nsme))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
-                    .addComponent(txt_dtme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_dtme))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
-                    .addComponent(txt_ngheme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_ngheme))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
-                    .addComponent(txt_dcme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_dcme))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
-                    .addComponent(txt_chuho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txt_chuho))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         btn_xemhdcn.setText("Xem hoạt động cá nhân");
@@ -304,23 +320,27 @@ public class TrangSV extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("THÔNG TIN SINH VIÊN");
 
-        txt_sdt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_sdtActionPerformed(evt);
-            }
-        });
+        txt_sdt.setText("jLabel15");
 
-        txt_quoctich.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_quoctichActionPerformed(evt);
-            }
-        });
+        txt_email.setText("jLabel15");
 
-        txt_dctamtru.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_dctamtruActionPerformed(evt);
-            }
-        });
+        txt_quoctich.setText("jLabel15");
+
+        txt_dcthuongtru.setText("jLabel15");
+
+        txt_dctamtru.setText("jLabel15");
+
+        txt_dantoc.setText("jLabel15");
+
+        txt_tongiao.setText("jLabel15");
+
+        txt_cmnd.setText("jLabel15");
+
+        txt_tennganhang.setText("jLabel15");
+
+        txt_songanhang.setText("jLabel15");
+
+        txt_bhyt.setText("jLabel15");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -334,39 +354,37 @@ public class TrangSV extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
                             .addComponent(jLabel12)
                             .addComponent(jLabel13)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel14)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel4)))
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10))
-                                .addGap(108, 108, 108)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_dctamtru, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                                    .addComponent(txt_dantoc, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_email, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_masv)
-                                    .addComponent(txt_tongiao)
-                                    .addComponent(txt_cmnd)
-                                    .addComponent(txt_tennganhang)
-                                    .addComponent(txt_songanhang)
-                                    .addComponent(txt_bhyt)
-                                    .addComponent(txt_ns)
-                                    .addComponent(txt_sdt)
-                                    .addComponent(txt_quoctich, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_dcthuongtru))))))
+                            .addComponent(jLabel14))
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_masv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_ns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_sdt, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                            .addComponent(txt_email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_quoctich, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_dcthuongtru, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_dctamtru, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_dantoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_tongiao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_cmnd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_tennganhang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_songanhang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_bhyt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -377,55 +395,55 @@ public class TrangSV extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txt_masv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_masv))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txt_ns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_ns))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txt_sdt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_sdt))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_email))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(txt_quoctich, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_quoctich))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txt_dcthuongtru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_dcthuongtru))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(txt_dctamtru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_dctamtru))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(txt_dantoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_dantoc))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(txt_tongiao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_tongiao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(txt_cmnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_cmnd))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(txt_tennganhang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_tennganhang))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(txt_songanhang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txt_songanhang))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(txt_bhyt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_bhyt))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -458,7 +476,7 @@ public class TrangSV extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         pack();
@@ -484,22 +502,6 @@ public class TrangSV extends javax.swing.JFrame {
         }
         else this.setVisible(true);
     }//GEN-LAST:event_btn_dangxuatActionPerformed
-
-    private void txt_dctamtruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_dctamtruActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_dctamtruActionPerformed
-
-    private void txt_quoctichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_quoctichActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_quoctichActionPerformed
-
-    private void txt_sdtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sdtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_sdtActionPerformed
-
-    private void txt_dcchaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_dcchaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_dcchaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -574,29 +576,29 @@ public class TrangSV extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txt_bhyt;
-    private javax.swing.JTextField txt_chuho;
-    private javax.swing.JTextField txt_cmnd;
-    private javax.swing.JTextField txt_dantoc;
-    private javax.swing.JTextField txt_dccha;
-    private javax.swing.JTextField txt_dcme;
-    private javax.swing.JTextField txt_dctamtru;
-    private javax.swing.JTextField txt_dcthuongtru;
-    private javax.swing.JTextField txt_dtcha;
-    private javax.swing.JTextField txt_dtme;
-    private javax.swing.JTextField txt_email;
-    private javax.swing.JTextField txt_hotencha;
-    private javax.swing.JTextField txt_hotenme;
-    private javax.swing.JTextField txt_masv;
-    private javax.swing.JTextField txt_nghecha;
-    private javax.swing.JTextField txt_ngheme;
-    private javax.swing.JTextField txt_ns;
-    private javax.swing.JTextField txt_nscha;
-    private javax.swing.JTextField txt_nsme;
-    private javax.swing.JTextField txt_quoctich;
-    private javax.swing.JTextField txt_sdt;
-    private javax.swing.JTextField txt_songanhang;
-    private javax.swing.JTextField txt_tennganhang;
-    private javax.swing.JTextField txt_tongiao;
+    private javax.swing.JLabel txt_bhyt;
+    private javax.swing.JLabel txt_chuho;
+    private javax.swing.JLabel txt_cmnd;
+    private javax.swing.JLabel txt_dantoc;
+    private javax.swing.JLabel txt_dccha;
+    private javax.swing.JLabel txt_dcme;
+    private javax.swing.JLabel txt_dctamtru;
+    private javax.swing.JLabel txt_dcthuongtru;
+    private javax.swing.JLabel txt_dtcha;
+    private javax.swing.JLabel txt_dtme;
+    private javax.swing.JLabel txt_email;
+    private javax.swing.JLabel txt_hotencha;
+    private javax.swing.JLabel txt_hotenme;
+    private javax.swing.JLabel txt_masv;
+    private javax.swing.JLabel txt_nghecha;
+    private javax.swing.JLabel txt_ngheme;
+    private javax.swing.JLabel txt_ns;
+    private javax.swing.JLabel txt_nscha;
+    private javax.swing.JLabel txt_nsme;
+    private javax.swing.JLabel txt_quoctich;
+    private javax.swing.JLabel txt_sdt;
+    private javax.swing.JLabel txt_songanhang;
+    private javax.swing.JLabel txt_tennganhang;
+    private javax.swing.JLabel txt_tongiao;
     // End of variables declaration//GEN-END:variables
 }
