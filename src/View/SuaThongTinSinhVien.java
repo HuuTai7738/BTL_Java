@@ -150,6 +150,7 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
         txt_tonGiao = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Sửa Thông Tin Sinh Viên");

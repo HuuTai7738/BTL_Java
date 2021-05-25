@@ -5,7 +5,6 @@
  */
 package View;
 
-
 import Controllers.DBConnection;
 import Model.SinhVien;
 import Model.ThongTinGD;
@@ -32,6 +31,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
     ArrayList<SinhVien> listTimKiem;
     DBConnection dbconnection = new DBConnection();
     Connection cnt;
+
     public TrangQuanTri() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -42,9 +42,10 @@ public class TrangQuanTri extends javax.swing.JFrame {
         //dung customtable thi tblSinhVien.setModel(new SVCustomTable(list));
     }
 
-    public void loadTable(){
+    public void loadTable() {
         tblSinhVien.setModel(new SVCustomTable(list));
     }
+
     public void loadTableTimKiem(ArrayList<SinhVien> ds) {
         if (ds.size() < 1) {
             JFrame frame = new JFrame();
@@ -55,18 +56,19 @@ public class TrangQuanTri extends javax.swing.JFrame {
             loadTable();
         }
     }
-    public void loadCSDL(){
+
+    public void loadCSDL() {
         ResultSet rs = dbconnection.layThongTinSinhVien();
         try {
-            while(rs.next()){
+            while (rs.next()) {
                 SinhVien x = new SinhVien();
                 x.setMaSV(rs.getString("MASV"));
                 x.setTenSV(rs.getString("TENSV"));
                 x.setKhoaQL(rs.getString("KHOA"));
                 x.setLop(rs.getString("LOP"));
-                
+
                 ThongTinSV ttsv = new ThongTinSV();
-                SimpleDateFormat date  = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
                 String dt = date.format(rs.getDate("NGAYSINH"));
                 ttsv.setNgaySinh(dt);
                 ttsv.setSdtSV(rs.getString("SDTSV"));
@@ -75,14 +77,14 @@ public class TrangQuanTri extends javax.swing.JFrame {
                 ttsv.setNoiThuongTru(rs.getString("NOITHUONGTRU"));
                 ttsv.setNoiTamTru(rs.getString("NOITAMTRU"));
                 ttsv.setDanToc(rs.getString("DANTOC"));
-                
+
                 ttsv.setTonGiao(rs.getString("TONGIAO"));
                 ttsv.setSoCCCD(rs.getString("SOCCCD"));
                 ttsv.setTenNganHang(rs.getString("TENNGANHANG"));
                 ttsv.setStkNganHang(rs.getString("STKNGANHANG"));
                 ttsv.setMaBHYT(rs.getString("MABHYT"));
                 x.setThongTinSV(ttsv);
-                
+
                 ThongTinGD ttgd = new ThongTinGD();
                 ttgd.setHoTenCha(rs.getString("HOTENCHA"));
                 ttgd.setNamSinhCha(rs.getInt("NAMSINHCHA"));
@@ -96,15 +98,15 @@ public class TrangQuanTri extends javax.swing.JFrame {
                 ttgd.setDiaChiLienHeMe(rs.getString("DIACHILIENHEME"));
                 ttgd.setHoTenChuHo(rs.getString("HOTENCHUHO"));
                 x.setThongTinGD(ttgd);
-                
+
                 list.add(x);
             }
-            } 
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(TrangQuanTri.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(rootPane, "Lỗi kết nối với database!", "Lỗi!", JOptionPane.ERROR_MESSAGE);
         }
     }
+
     public void loadCSDLTimKiem() {
         ResultSet rs = dbconnection.layThongTinSinhVien();
         try {
@@ -125,7 +127,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
                 ttsv.setNoiThuongTru(rs.getString("NOITHUONGTRU"));
                 ttsv.setNoiTamTru(rs.getString("NOITAMTRU"));
                 ttsv.setDanToc(rs.getString("DANTOC"));
-               
+
                 ttsv.setTonGiao(rs.getString("TONGIAO"));
                 ttsv.setSoCCCD(rs.getString("SOCCCD"));
                 ttsv.setTenNganHang(rs.getString("TENNGANHANG"));
@@ -154,6 +156,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
             Logger.getLogger(TrangQuanTri.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     void capNhatSinhVien(SinhVien sv, String matKhau, int selectedRow) {
         try {
             dbconnection.suaSinhVien(sv, matKhau);
@@ -162,10 +165,10 @@ public class TrangQuanTri extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Sửa thành công!", "Thành công!", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
             Logger.getLogger(TrangQuanTri.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(rootPane, "Sửa thất bại! ", "Lỗi",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Sửa thất bại! ", "Lỗi", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -356,47 +359,53 @@ public class TrangQuanTri extends javax.swing.JFrame {
     private void jMenuChiTietActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuChiTietActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblSinhVien.getSelectedRow();
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(null, "Hãy chọn một sinh viên!","Lỗi!", JOptionPane.ERROR_MESSAGE);
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(null, "Hãy chọn một sinh viên!", "Lỗi!", JOptionPane.ERROR_MESSAGE);
+        } else {
+            new ChiTietSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow)).setVisible(rootPaneCheckingEnabled);
         }
-        else
-        new ChiTietSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow)).setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_jMenuChiTietActionPerformed
 
     private void jMenuXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuXoaActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblSinhVien.getSelectedRow();
-        try{
-            if(selectedRow == -1){
+        try {
+            if (selectedRow == -1) {
                 throw new Exception("Hãy chọn một dòng!");
-            }
-            else{
+            } else {
                 int choice = JOptionPane.showConfirmDialog(null, "Bạn chắc chắn muốn xóa sinh viên này?", "Xác nhận", JOptionPane.YES_NO_OPTION);
-                if(choice == JOptionPane.YES_OPTION){
+                if (choice == JOptionPane.YES_OPTION) {
                     dbconnection.xoaSinhVien(list.get(selectedRow).getMaSV());
                     list.remove(selectedRow);
                     loadTable();
                 }
             }
-        }
-        catch(SQLException ex){
-            JOptionPane.showMessageDialog(rootPane, "Xóa thất bại!","Lỗi!", JOptionPane.ERROR_MESSAGE);
-        }
-        catch(Exception ex){
-            JOptionPane.showMessageDialog(rootPane, ex.getMessage(),"Lỗi!", JOptionPane.ERROR_MESSAGE);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, "Xóa thất bại!", "Lỗi!", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Lỗi!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jMenuXoaActionPerformed
 
     private void jMenuThemSinhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuThemSinhVienActionPerformed
         // TODO add your handling code here:
-        //new ThemSinhVien().setVisible(true);
+        new ThemSinhVien().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuThemSinhVienActionPerformed
 
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
         // TODO add your handling code here:
-        listTimKiem = new ArrayList<>();
-        loadCSDLTimKiem();
-        loadTableTimKiem(listTimKiem);
+        dbconnection.getConnection();
+        String matensv = txtMaTenSV.getText();
+        if (matensv.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập mã sinh viên để tìm kiếm");
+        } else if (!dbconnection.kiemTra(matensv) && !dbconnection.kiemTraTenSV(matensv)) {
+            JOptionPane.showMessageDialog(this, "Mã sinh viên không tồn tại");
+        } else {
+            listTimKiem = new ArrayList<>();
+            loadCSDLTimKiem();
+            loadTableTimKiem(listTimKiem);
+        }
     }//GEN-LAST:event_btnTimKiemActionPerformed
 
     private void jMenuQuanLyHoatDongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuQuanLyHoatDongActionPerformed
@@ -425,17 +434,17 @@ public class TrangQuanTri extends javax.swing.JFrame {
     private void jMenuSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSuaActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblSinhVien.getSelectedRow();
-        new SuaThongTinSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow),dbconnection.layMatKhau(list.get(selectedRow).getMaSV()),selectedRow).setVisible(rootPaneCheckingEnabled);
+        new SuaThongTinSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow), dbconnection.layMatKhau(list.get(selectedRow).getMaSV()), selectedRow).setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_jMenuSuaActionPerformed
 
     private void DangXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DangXuatMouseClicked
         // TODO add your handling code here:
-        int exit=JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn đăng xuất","Xác nhân đăng xuất",JOptionPane.YES_NO_OPTION);
-        if(exit==JOptionPane.YES_OPTION){
+        int exit = JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn đăng xuất", "Xác nhân đăng xuất", JOptionPane.YES_NO_OPTION);
+        if (exit == JOptionPane.YES_OPTION) {
             this.dispose();
             new Dangnhap().setVisible(true);
         }
-        
+
     }//GEN-LAST:event_DangXuatMouseClicked
 
     /**
@@ -496,5 +505,4 @@ public class TrangQuanTri extends javax.swing.JFrame {
     private javax.swing.JTextField txtMaTenSV;
     // End of variables declaration//GEN-END:variables
 
-    
 }

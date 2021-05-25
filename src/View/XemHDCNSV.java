@@ -72,6 +72,8 @@ public class XemHDCNSV extends javax.swing.JFrame {
     }
     public XemHDCNSV(String maSV) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Xem hoạt động cá nhân");
         initTable();
         loadTable(maSV);
     }
@@ -94,6 +96,7 @@ public class XemHDCNSV extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         Table_HD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -151,7 +154,7 @@ public class XemHDCNSV extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(141, 141, 141))
             .addGroup(layout.createSequentialGroup()
-                .addGap(333, 333, 333)
+                .addGap(334, 334, 334)
                 .addComponent(btn_TroVe, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -163,12 +166,12 @@ public class XemHDCNSV extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(btn_TroVe)
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
 
         pack();

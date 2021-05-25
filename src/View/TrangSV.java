@@ -24,6 +24,7 @@ public class TrangSV extends javax.swing.JFrame {
     
     public TrangSV(String maSV) {
         initComponents();
+        this.setLocationRelativeTo(null);
         loadCSDL(maSV);
     }
     public  void loadCSDL(String maSV){
@@ -140,6 +141,7 @@ public class TrangSV extends javax.swing.JFrame {
         txt_bhyt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel28.setText("THÔNG TIN GIA ĐINH");

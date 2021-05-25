@@ -14,7 +14,11 @@ import java.util.Objects;
 public class TaiKhoan {
     private String maSV;
     private String matKhau;
-
+    
+    public TaiKhoan(){
+        this.maSV = null;
+        this.matKhau = null;
+    }
     public TaiKhoan(String maSV, String matKhau) {
         this.maSV = maSV;
         this.matKhau = matKhau;
@@ -51,6 +55,14 @@ public class TaiKhoan {
             return false;
         }
         return true;
+    }
+
+    public void setMaSV(String maSV) {
+        this.maSV = maSV;
+    }
+
+    public void setMatKhau(String matKhau) {
+        this.matKhau = matKhau;
     }
     
     
