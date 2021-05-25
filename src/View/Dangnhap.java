@@ -26,6 +26,7 @@ public class Dangnhap extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setTitle("Trang chủ");
+        this.setLocationRelativeTo(null);
     }
 
     /**
