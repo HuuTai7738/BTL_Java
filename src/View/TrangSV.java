@@ -200,6 +200,8 @@ public class TrangSV extends javax.swing.JFrame {
         jLabel19.setText("Nơi thường trú:");
 
         txt_masv.setText("jTextField1");
+        txt_masv.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_masv.setEnabled(false);
         txt_masv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_masvActionPerformed(evt);
@@ -207,28 +209,52 @@ public class TrangSV extends javax.swing.JFrame {
         });
 
         txt_ns.setText("jTextField2");
+        txt_ns.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_ns.setEnabled(false);
 
         txt_email.setText("jTextField3");
+        txt_email.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_email.setEnabled(false);
 
         txt_dcthuongtru.setText("jTextField4");
+        txt_dcthuongtru.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_dcthuongtru.setEnabled(false);
 
         txt_dantoc.setText("jTextField5");
+        txt_dantoc.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_dantoc.setEnabled(false);
 
         txt_tennganhang.setText("jTextField6");
+        txt_tennganhang.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_tennganhang.setEnabled(false);
 
         txt_songanhang.setText("jTextField7");
+        txt_songanhang.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_songanhang.setEnabled(false);
 
         txt_sdt.setText("jTextField8");
+        txt_sdt.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_sdt.setEnabled(false);
 
         txt_quoctich.setText("jTextField9");
+        txt_quoctich.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_quoctich.setEnabled(false);
 
         txt_dctamtru.setText("jTextField10");
+        txt_dctamtru.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_dctamtru.setEnabled(false);
 
         txt_tongiao.setText("jTextField11");
+        txt_tongiao.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_tongiao.setEnabled(false);
 
         txt_cmnd.setText("jTextField12");
+        txt_cmnd.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_cmnd.setEnabled(false);
 
         txt_bhyt.setText("jTextField13");
+        txt_bhyt.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_bhyt.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -363,26 +389,48 @@ public class TrangSV extends javax.swing.JFrame {
         jLabel1.setText("Họ tên mẹ");
 
         txt_hotencha.setText("jTextField1");
+        txt_hotencha.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_hotencha.setEnabled(false);
 
         txt_dtcha.setText("jTextField2");
+        txt_dtcha.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_dtcha.setEnabled(false);
 
         txt_nghecha.setText("jTextField3");
+        txt_nghecha.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_nghecha.setEnabled(false);
 
         txt_hotenme.setText("jTextField4");
+        txt_hotenme.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_hotenme.setEnabled(false);
 
         txt_dtme.setText("jTextField5");
+        txt_dtme.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_dtme.setEnabled(false);
 
         txt_ngheme.setText("jTextField6");
+        txt_ngheme.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_ngheme.setEnabled(false);
 
         txt_chuho.setText("jTextField7");
+        txt_chuho.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_chuho.setEnabled(false);
 
         txt_nscha.setText("jTextField8");
+        txt_nscha.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_nscha.setEnabled(false);
 
         txt_dccha.setText("jTextField9");
+        txt_dccha.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_dccha.setEnabled(false);
 
         txt_nsme.setText("jTextField10");
+        txt_nsme.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_nsme.setEnabled(false);
 
         txt_dcme.setText("jTextField11");
+        txt_dcme.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txt_dcme.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
