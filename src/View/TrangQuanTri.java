@@ -450,7 +450,15 @@ public class TrangQuanTri extends javax.swing.JFrame {
     private void jMenuSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSuaActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblSinhVien.getSelectedRow();
-        new SuaThongTinSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow), dbconnection.layMatKhau(list.get(selectedRow).getMaSV()), selectedRow).setVisible(rootPaneCheckingEnabled);
+        try {
+            if (selectedRow == -1) {
+                throw new Exception("Hãy chọn một dòng!");
+            } else {
+            new SuaThongTinSinhVien(this, rootPaneCheckingEnabled, list.get(selectedRow), dbconnection.layMatKhau(list.get(selectedRow).getMaSV()), selectedRow).setVisible(rootPaneCheckingEnabled);
+            }
+            } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Lỗi!", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jMenuSuaActionPerformed
 
     private void DangXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DangXuatMouseClicked
