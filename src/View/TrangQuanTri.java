@@ -13,10 +13,13 @@ import java.util.ArrayList;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.apache.commons.collections4.comparators.ComparableComparator;
 
 /**
  *
@@ -43,6 +46,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
     }
 
     public void loadTable() {
+        sapXep();
         tblSinhVien.setModel(new SVCustomTable(list));
     }
 
@@ -106,7 +110,19 @@ public class TrangQuanTri extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Lỗi kết nối với database!", "Lỗi!", JOptionPane.ERROR_MESSAGE);
         }
     }
-
+    public void sapXep(){
+        Collections.sort(list, new Comparator<SinhVien>() {
+            @Override
+            public int compare(SinhVien o1, SinhVien o2) {
+                if(o1.getLop().compareToIgnoreCase(o2.getLop())== 0){
+                    return o1.getTenSV().compareToIgnoreCase(o2.getTenSV());
+                }
+                else
+                    return o1.getLop().compareToIgnoreCase(o2.getLop());
+            }
+        });
+    }
+    
     public void loadCSDLTimKiem() {
         ResultSet rs = dbconnection.layThongTinSinhVien();
         try {
