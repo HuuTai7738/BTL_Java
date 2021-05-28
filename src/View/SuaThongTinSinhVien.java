@@ -634,13 +634,11 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
            
            
            ThongTinSV ttsv = new ThongTinSV();
-           try{
+           
             date.parse(txt_NgaySinh.getText());
             ttsv.setNgaySinh(txt_NgaySinh.getText());
-           }
-           catch(ParseException ex){
-               JOptionPane.showMessageDialog(rootPane, "Ngày không hợp lệ(dd/MM/yyyy)", "Lỗi!", JOptionPane.ERROR_MESSAGE);
-           }
+           
+           
             ttsv.setSdtSV(txt_sdtSV.getText());
             ttsv.setEmailSV(txt_email.getText());
             ttsv.setQuocTich(txt_quocTich.getText());
@@ -668,16 +666,21 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
             ttgd.setDiaChiLienHeMe(txt_dcMe.getText());
             ttgd.setHoTenChuHo(txt_tenChuHo.getText());
             sv.setThongTinGD(ttgd);
+            int option = JOptionPane.showConfirmDialog(rootPane, "Bạn chắc chắn lưu thông tin này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+            if(option == JOptionPane.YES_NO_OPTION){
+            qt.capNhatSinhVien(sv,matKhau,row);
+            this.dispose();
+            }
         }
-        
+        catch(ParseException ex){
+               JOptionPane.showMessageDialog(rootPane, "Ngày không hợp lệ(dd/MM/yyyy)", "Lỗi!", JOptionPane.ERROR_MESSAGE);
+           }
         catch(Exception e ){
             JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Lỗi!", JOptionPane.ERROR_MESSAGE);
         }
-        int option = JOptionPane.showConfirmDialog(rootPane, "Bạn chắc chắn lưu thông tin này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
-        if(option == JOptionPane.YES_NO_OPTION){
-            qt.capNhatSinhVien(sv,matKhau,row);
-            this.dispose();
-        }
+        
+        
+        
     }//GEN-LAST:event_btn_luuActionPerformed
 
     /**
