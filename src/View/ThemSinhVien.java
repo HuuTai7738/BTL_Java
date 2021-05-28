@@ -88,7 +88,7 @@ public class ThemSinhVien extends javax.swing.JFrame {
         txtSDTMe.setText("");
         txtHoTenChuHo.setText("");
         txtTenTaiKhoan.setText("");
-        txtMatKhau.setText("");
+        txtMatKhau.setText(""); 
     }
 
     public void docDSSV(String filename) throws FileNotFoundException, IOException {
