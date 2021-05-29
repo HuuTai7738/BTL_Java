@@ -180,7 +180,7 @@ public class DBConnection {
     }
 
     public int xoaKyLuat(String maSV, String maKL) throws SQLException {
-        String sql = "Delete from HOATDONG where maSV=? and maKL=?";
+        String sql = "Delete from KILUAT where maSV=? and maKL=?";
         PreparedStatement ps = cont.prepareStatement(sql);
         ps.setString(1, maSV);
         ps.setString(2, maKL);

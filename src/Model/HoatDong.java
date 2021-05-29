@@ -20,6 +20,11 @@ public class HoatDong {
     public HoatDong() {
     }
 
+    public HoatDong(String maSV, String maHD) {
+        this.maSV = maSV;
+        this.maHD = maHD;
+    }
+
     public HoatDong(String maSV, String maHD, String tenHD, int diemCong) {
         this.maSV = maSV;
         this.maHD = maHD;

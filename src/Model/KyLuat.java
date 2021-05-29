@@ -20,6 +20,11 @@ public class KyLuat {
     public KyLuat() {
     }
 
+    public KyLuat(String maSV, String maKL) {
+        this.maSV = maSV;
+        this.maKL = maKL;
+    }
+
     public KyLuat(String maSV, String maKL, String tenKL, int diemTru) {
         this.maSV = maSV;
         this.maKL = maKL;

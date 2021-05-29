@@ -25,7 +25,6 @@ public class QuanLyKyLuat extends javax.swing.JFrame {
      */
     ArrayList<KyLuat> listKL;
     DBConnection con=new DBConnection();
-    int i = 1;
     public QuanLyKyLuat() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -315,23 +314,23 @@ public class QuanLyKyLuat extends javax.swing.JFrame {
         con.getConnection();
         int dongChon = tblKyLuat.getSelectedRow();
         String maSV;
-        String maHD;
+        String maKL;
         if (dongChon == -1) {
             JOptionPane.showMessageDialog(this, "Vui lòng chọn dòng cần xóa");
         } else {
             maSV = tblKyLuat.getValueAt(dongChon, 1).toString();
-            maHD = tblKyLuat.getValueAt(dongChon, 2).toString();
+            maKL = tblKyLuat.getValueAt(dongChon, 2).toString();
+            KyLuat kyLuat=new KyLuat(maSV, maKL);
             int kt = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn xóa?"
                     , "Xác nhận xóa", JOptionPane.YES_NO_OPTION);
             if (kt == JOptionPane.YES_OPTION) {
                 try {
-                    con.xoaHoatDong(maSV, maHD);
-                    listKL.remove(dongChon);
+                    con.xoaKyLuat(maSV, maKL);
+                    listKL.remove(kyLuat);
                     hienThiDuLieu();
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(this,ex.getMessage(),"Lỗi",JOptionPane.ERROR_MESSAGE);
                 }
-
             }
         }
     }//GEN-LAST:event_btnXoaActionPerformed

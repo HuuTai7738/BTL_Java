@@ -318,20 +318,19 @@ public class QuanLyHoatDong extends javax.swing.JFrame {
         } else {
             maSV = tblHoatDong.getValueAt(dongChon, 1).toString();
             maHD = tblHoatDong.getValueAt(dongChon, 2).toString();
+            HoatDong hoatDong=new HoatDong(maSV, maHD);
             int kt = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn xóa?"
                     , "Xác nhận xóa", JOptionPane.YES_NO_OPTION);
             if (kt == JOptionPane.YES_OPTION) {
                 try {
                     con.xoaHoatDong(maSV, maHD);
-                    listHD.remove(dongChon);
+                    listHD.remove(hoatDong);
                     hienThiDuLieu();
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(this,ex.getMessage(),"Lỗi",JOptionPane.ERROR_MESSAGE);
                 }
-
             }
         }
-
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
