@@ -5,44 +5,46 @@
  */
 package View;
 
+
+
+
 import Controllers.DBConnection;
-import Model.HoatDong;
+import Model.KyLuat;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
 
 /**
  *
  * @author Admin
  */
-public class QuanLyHD extends javax.swing.JFrame {
+public class QuanLyKyLuat extends javax.swing.JFrame {
 
     /**
      * Creates new form QuanLyHD
      */
-    ArrayList<HoatDong> list;
-    DBConnection con = new DBConnection();
-    public QuanLyHD() {
+    ArrayList<KyLuat> listKL;
+    DBConnection con=new DBConnection();
+    int i = 1;
+    public QuanLyKyLuat() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setTitle("Quản lý hoạt động");
+        this.setTitle("Quản lý kỷ luật");
         con.getConnection();
-        list = con.layDanhSachHoatDong();
+        listKL=con.layDanhSachKyLuat();
         hienThiDuLieu();
 
     }
-
     public void hienThiDuLieu() {
-        tblHoatDong.setModel(new QLHDCustomTable(list));
+        tblKyLuat.setModel(new QLKLCustomTable(listKL));
     }
 
     public void xoaTrang() {
         txtMaSV.requestFocus();
         txtMaSV.setText("");
-        txtMaHoatDong.setText("");
-        txtTenHoatDong.setText("");
-        txtDiemCong.setText("");
+        txtMaKyLuat.setText("");
+        txtTenKyLuat.setText("");
+        txtDiemTru.setText("");
     }
 
     /**
@@ -67,15 +69,15 @@ public class QuanLyHD extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtMaSV = new javax.swing.JTextField();
-        txtMaHoatDong = new javax.swing.JTextField();
-        txtTenHoatDong = new javax.swing.JTextField();
-        txtDiemCong = new javax.swing.JTextField();
+        txtMaKyLuat = new javax.swing.JTextField();
+        txtTenKyLuat = new javax.swing.JTextField();
+        txtDiemTru = new javax.swing.JTextField();
         btnTimKiem = new javax.swing.JButton();
         btnThem = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
         btnQuayLai = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tblHoatDong = new javax.swing.JTable();
+        tblKyLuat = new javax.swing.JTable();
 
         jLabel2.setText("jLabel2");
 
@@ -111,15 +113,15 @@ public class QuanLyHD extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("QUẢN LÝ HOẠT ĐỘNG");
+        jLabel1.setText("QUẢN LÝ KỶ LUẬT");
 
-        jLabel4.setText("Mã hoạt động:");
+        jLabel4.setText("Mã kỷ luật:");
 
         jLabel3.setText("Mã sinh viên:");
 
-        jLabel5.setText("Tên hoạt động:");
+        jLabel5.setText("Tên kỷ luật:");
 
-        jLabel7.setText("Điểm cộng:");
+        jLabel7.setText("Điểm trừ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -134,9 +136,9 @@ public class QuanLyHD extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtMaSV)
-                    .addComponent(txtMaHoatDong)
-                    .addComponent(txtTenHoatDong)
-                    .addComponent(txtDiemCong, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE))
+                    .addComponent(txtMaKyLuat)
+                    .addComponent(txtTenKyLuat)
+                    .addComponent(txtDiemTru, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE))
                 .addGap(0, 51, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -148,15 +150,15 @@ public class QuanLyHD extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtMaHoatDong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMaKyLuat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtTenHoatDong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTenKyLuat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txtDiemCong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDiemTru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -188,7 +190,7 @@ public class QuanLyHD extends javax.swing.JFrame {
             }
         });
 
-        tblHoatDong.setModel(new javax.swing.table.DefaultTableModel(
+        tblKyLuat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -199,12 +201,12 @@ public class QuanLyHD extends javax.swing.JFrame {
 
             }
         ));
-        tblHoatDong.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblKyLuat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblHoatDongMouseClicked(evt);
+                tblKyLuatMouseClicked(evt);
             }
         });
-        jScrollPane3.setViewportView(tblHoatDong);
+        jScrollPane3.setViewportView(tblKyLuat);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -228,7 +230,7 @@ public class QuanLyHD extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(210, 210, 210))
+                .addGap(227, 227, 227))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,45 +259,46 @@ public class QuanLyHD extends javax.swing.JFrame {
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
         con.getConnection();
         String maSV = txtMaSV.getText();
-        ArrayList<HoatDong> ds = new ArrayList<>();
-        if (maSV.trim().isEmpty()) {
+        ArrayList<KyLuat> listTimKiem = new ArrayList<>();
+        if (maSV.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập mã sinh viên để tìm kiếm");
         } else if (!con.kiemTra(maSV)) {
             JOptionPane.showMessageDialog(this, "Mã sinh viên không tồn tại");
         } else {
-            for (HoatDong x : list) {
+            for (KyLuat x : listKL) {
                 if (x.getMaSV().equals(maSV)) {
-                    ds.add(x);
+                    listTimKiem.add(x);
                 }
             }
-            tblHoatDong.setModel(new QLHDCustomTable(ds));
+            tblKyLuat.setModel(new QLKLCustomTable(listTimKiem));
         }
+
     }//GEN-LAST:event_btnTimKiemActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         con.getConnection();
         String maSV = txtMaSV.getText();
-        String maHD = txtMaHoatDong.getText();
-        String tenHD = txtTenHoatDong.getText();
-        int diemCong=0;
-        if(maSV.isEmpty() || maHD.isEmpty()|| tenHD.isEmpty() || txtDiemCong.getText().isEmpty()){
+        String maKL = txtMaKyLuat.getText();
+        String tenKL= txtTenKyLuat.getText();
+        int diemTru=0;
+        if(maSV.trim().isEmpty() || maKL.trim().isEmpty()|| tenKL.trim().isEmpty() || txtDiemTru.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(this, "Các trường không được để trống!");
         }else{
-            HoatDong hd = null;
+            KyLuat kiLuat = null;
             try {
-                diemCong = Integer.parseInt(txtDiemCong.getText());
-                hd = new HoatDong(maSV, maHD,tenHD, diemCong);
+                diemTru = Integer.parseInt(txtDiemTru.getText());
+                kiLuat = new KyLuat(maSV, maKL,tenKL, diemTru);
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(this, "Điểm cộng phải là số!","Lỗi",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Điểm trừ phải là số!","Lỗi",JOptionPane.ERROR_MESSAGE);
                 return;
             }
             if(con.kiemTra(maSV)){
-                if(list.contains(hd)){
-                    JOptionPane.showMessageDialog(this,"Hoạt động của sinh viên đã tồn tại!","Lỗi",JOptionPane.ERROR_MESSAGE);
+                if(listKL.contains(kiLuat)){
+                    JOptionPane.showMessageDialog(this,"Kỷ luật của sinh viên đã tồn tại!","Lỗi",JOptionPane.ERROR_MESSAGE);
                 }else{
                     try {
-                        con.themHoatDong(hd);
-                        list.add(hd);
+                        con.themKyLuat(kiLuat);
+                        listKL.add(kiLuat);
                         hienThiDuLieu();
                         xoaTrang();
                     } catch (SQLException ex) {
@@ -310,20 +313,20 @@ public class QuanLyHD extends javax.swing.JFrame {
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         con.getConnection();
-        int dongChon = tblHoatDong.getSelectedRow();
+        int dongChon = tblKyLuat.getSelectedRow();
         String maSV;
         String maHD;
         if (dongChon == -1) {
             JOptionPane.showMessageDialog(this, "Vui lòng chọn dòng cần xóa");
         } else {
-            maSV = tblHoatDong.getValueAt(dongChon, 1).toString();
-            maHD = tblHoatDong.getValueAt(dongChon, 2).toString();
+            maSV = tblKyLuat.getValueAt(dongChon, 1).toString();
+            maHD = tblKyLuat.getValueAt(dongChon, 2).toString();
             int kt = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn xóa?"
                     , "Xác nhận xóa", JOptionPane.YES_NO_OPTION);
             if (kt == JOptionPane.YES_OPTION) {
                 try {
                     con.xoaHoatDong(maSV, maHD);
-                    list.remove(dongChon);
+                    listKL.remove(dongChon);
                     hienThiDuLieu();
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(this,ex.getMessage(),"Lỗi",JOptionPane.ERROR_MESSAGE);
@@ -331,22 +334,20 @@ public class QuanLyHD extends javax.swing.JFrame {
 
             }
         }
-
     }//GEN-LAST:event_btnXoaActionPerformed
 
+    private void tblKyLuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKyLuatMouseClicked
+        int dongChon = tblKyLuat.getSelectedRow();
+        txtMaSV.setText(tblKyLuat.getValueAt(dongChon, 1).toString());
+        txtMaKyLuat.setText(tblKyLuat.getValueAt(dongChon, 2).toString());
+        txtTenKyLuat.setText(tblKyLuat.getValueAt(dongChon, 3).toString());
+        txtDiemTru.setText(tblKyLuat.getValueAt(dongChon, 4).toString());
+    }//GEN-LAST:event_tblKyLuatMouseClicked
+
     private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
-        // TODO add your handling code here:
         new TrangQuanTri().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnQuayLaiActionPerformed
-
-    private void tblHoatDongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoatDongMouseClicked
-        int dongChon = tblHoatDong.getSelectedRow();
-        txtMaSV.setText(tblHoatDong.getValueAt(dongChon, 1).toString());
-        txtMaHoatDong.setText(tblHoatDong.getValueAt(dongChon, 2).toString());
-        txtTenHoatDong.setText(tblHoatDong.getValueAt(dongChon, 3).toString());
-        txtDiemCong.setText(tblHoatDong.getValueAt(dongChon, 4).toString());
-    }//GEN-LAST:event_tblHoatDongMouseClicked
 
     /**
      * @param args the command line arguments
@@ -365,14 +366,38 @@ public class QuanLyHD extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(QuanLyHD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QuanLyKyLuat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(QuanLyHD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QuanLyKyLuat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(QuanLyHD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QuanLyKyLuat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(QuanLyHD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QuanLyKyLuat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -385,7 +410,7 @@ public class QuanLyHD extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new QuanLyHD().setVisible(true);
+                new QuanLyKyLuat().setVisible(true);
             }
         });
     }
@@ -408,10 +433,10 @@ public class QuanLyHD extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable tblHoatDong;
-    private javax.swing.JTextField txtDiemCong;
-    private javax.swing.JTextField txtMaHoatDong;
+    private javax.swing.JTable tblKyLuat;
+    private javax.swing.JTextField txtDiemTru;
+    private javax.swing.JTextField txtMaKyLuat;
     private javax.swing.JTextField txtMaSV;
-    private javax.swing.JTextField txtTenHoatDong;
+    private javax.swing.JTextField txtTenKyLuat;
     // End of variables declaration//GEN-END:variables
 }

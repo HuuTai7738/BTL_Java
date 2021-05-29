@@ -426,7 +426,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
 
     private void jMenuQuanLyHoatDongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuQuanLyHoatDongActionPerformed
         // TODO add your handling code here:
-        new QuanLyHD().setVisible(true);
+        new QuanLyHoatDong().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuQuanLyHoatDongActionPerformed
 
@@ -438,7 +438,7 @@ public class TrangQuanTri extends javax.swing.JFrame {
 
     private void jMenuQuanLyKyLuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuQuanLyKyLuatActionPerformed
         // TODO add your handling code here:
-        new QuanLyKL().setVisible(true);
+        new QuanLyKyLuat().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuQuanLyKyLuatActionPerformed
 
