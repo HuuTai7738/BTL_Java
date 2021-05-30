@@ -5,6 +5,7 @@ import Model.SinhVien;
 import Model.TaiKhoan;
 import Model.ThongTinGD;
 import Model.ThongTinSV;
+import java.awt.HeadlessException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,8 +15,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -102,8 +101,6 @@ public class ThemSinhVien extends javax.swing.JFrame {
         rowIterator.next();
         while (rowIterator.hasNext()) {
             Row rows = rowIterator.next();
-
-            //System.out.println(rows.getCell(6).getStringCellValue());
             SinhVien sv = new SinhVien();
             TaiKhoan tk = new TaiKhoan();
             SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
@@ -162,7 +159,7 @@ public class ThemSinhVien extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Ngày không hợp lệ(DD/MM/YYYY)", "Lỗi!", JOptionPane.ERROR_MESSAGE);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(rootPane, "Định dạng năm sinh của cha / mẹ không đúng!", "Lỗi!", JOptionPane.ERROR_MESSAGE);
-            } catch (Exception e) {
+            } catch (SQLException | HeadlessException e) {
                 JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Lỗi!", JOptionPane.ERROR_MESSAGE);
             }
         }
