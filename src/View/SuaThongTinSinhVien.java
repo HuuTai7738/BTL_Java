@@ -667,7 +667,7 @@ public class SuaThongTinSinhVien extends javax.swing.JDialog {
             ttgd.setHoTenChuHo(txt_tenChuHo.getText());
             sv.setThongTinGD(ttgd);
             int option = JOptionPane.showConfirmDialog(rootPane, "Bạn chắc chắn lưu thông tin này không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
-            if(option == JOptionPane.YES_NO_OPTION){
+            if(option == JOptionPane.YES_OPTION){
             qt.capNhatSinhVien(sv,matKhau,row);
             this.dispose();
             }
