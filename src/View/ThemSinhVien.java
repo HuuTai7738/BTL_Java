@@ -50,7 +50,6 @@ public class ThemSinhVien extends javax.swing.JFrame {
         conn.getConnection();
         this.setLocationRelativeTo(null);
         this.setTitle("Nhập mới sinh viên");
-        this.setLocationRelativeTo(null);
     }
 
     public void loadTable() {
